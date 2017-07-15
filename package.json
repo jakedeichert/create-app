@@ -1,0 +1,27 @@
+{
+  "name": "create-app",
+  "version": "1.0.0",
+  "description": "A web app generator cli that abstracts away build configuration",
+  "author": "Jake Deichert",
+  "license": "MIT",
+  "main": "src/index.js",
+  "bin": {
+    "create-app": "bin/index.js"
+  },
+  "scripts": {
+    "pretty": "prettier --single-quote --trailing-comma es5"
+  },
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "request": "^2.81.0",
+    "yargs": "^8.0.2",
+    "yauzl": "^2.8.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.2.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.1.0",
+    "prettier": "^1.5.2"
+  }
+}

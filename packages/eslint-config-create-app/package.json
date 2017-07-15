@@ -1,0 +1,8 @@
+{
+  "name": "eslint-config-create-app",
+  "version": "3.0.0",
+  "description": "My personal eslint config",
+  "main": "index.js",
+  "author": "Jake Deichert",
+  "license": "MIT"
+}
