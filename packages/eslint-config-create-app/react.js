@@ -4,14 +4,14 @@ const ERROR = 'error';
 module.exports = {
   plugins: [
     'jsx-a11y', // https://github.com/evcohen/eslint-plugin-jsx-a11y
-    'react' // https://github.com/yannickcr/eslint-plugin-react
+    'react', // https://github.com/yannickcr/eslint-plugin-react
   ],
 
   settings: {
     react: {
       pragma: 'React',
-      version: '15.0'
-    }
+      version: '15.0',
+    },
   },
 
   extends: 'plugin:react/recommended',
@@ -109,6 +109,6 @@ module.exports = {
     // Enforce scope prop is only used on <th> elements
     'jsx-a11y/scope': WARN,
     // Enforce tabIndex value is not greater than zero
-    'jsx-a11y/tabindex-no-positive': WARN
-  }
+    'jsx-a11y/tabindex-no-positive': WARN,
+  },
 };
