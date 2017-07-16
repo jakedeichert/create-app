@@ -2,6 +2,6 @@
 
 // Allow requiring absolute paths relative to the src directory
 const path = require('path');
-process.env.NODE_PATH = path.join(__dirname, '../src');
+process.env.NODE_PATH = path.join(__dirname, '../cli');
 require('module').Module._initPaths();
-require('../src/index.js');
+require('../cli/index.js');
