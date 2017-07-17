@@ -1,5 +1,6 @@
 const { events, initProject } = require('../../lib/init');
 const { listen } = require('../../lib/utils/event-logger');
+const { currentDir } = require('utils/helpers');
 const log = require('utils/logger');
 const command = 'init <type>';
 const describe = 'create a new project';
@@ -15,7 +16,7 @@ listen(eventCode => {
 });
 
 const initHandler = async ({ appName }, projectType) => {
-  await initProject(process.cwd(), appName, projectType);
+  await initProject(currentDir, appName, projectType);
 };
 
 module.exports = {
