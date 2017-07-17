@@ -1,4 +1,4 @@
-const { initHandler } = require('common/init');
+const { initHandler } = require('../init');
 const command = 'react <appName>';
 const describe = 'create a new react project';
 
