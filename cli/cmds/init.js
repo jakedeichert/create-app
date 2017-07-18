@@ -11,7 +11,7 @@ listen(eventCode => {
     case events.createDirFail:
       return log.errExit(`Directory already exists`);
     case events.cloneProjectFail:
-      return log.errExit(`Could not clone project`);
+      return log.errExit(`Failed to clone project`);
   }
 });
 
