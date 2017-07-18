@@ -10,8 +10,8 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "format": "npm run _prettier:config -- --write '**/*.{js,json}'",
-    "format:check": "npm run _prettier:config -- --list-different '**/*.{js,json}'",
+    "format": "npm run _prettier:config -- --write '**/*.js'",
+    "format:check": "npm run _prettier:config -- --list-different '**/*.js'",
     "_prettier:config": "prettier --single-quote --trailing-comma es5 --jsx-bracket-same-line"
   },
   "dependencies": {
