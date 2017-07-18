@@ -5,8 +5,9 @@ const log = require('utils/logger');
 const command = 'format';
 const describe = 'run prettier';
 const builder = {
-  check: {
-    describe: 'list files that need to be formatted',
+  c: {
+    alias: 'check',
+    describe: 'List files that need to be formatted',
   },
 };
 
