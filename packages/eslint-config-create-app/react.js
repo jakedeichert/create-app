@@ -74,8 +74,8 @@ module.exports = {
     'jsx-a11y/click-events-have-key-events': WARN,
     // Enforce heading elements contain accessible content
     'jsx-a11y/heading-has-content': WARN,
-    // Enforce an anchor element's href prop value is not just #
-    'jsx-a11y/href-no-hash': WARN,
+    // Enforce all anchors are valid, navigable elements https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md
+    'jsx-a11y/anchor-is-valid': WARN,
     // Enforce <html> element has lang prop
     'jsx-a11y/html-has-lang': WARN,
     // Enforce <img> alt prop does not contain the word "image", "picture", or "photo"
