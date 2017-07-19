@@ -23,11 +23,10 @@ listen((eventCode, ctx) => {
 const handler = async argv => {
   if (argv.check) {
     await check(currentDir);
-    console.log(`Check success`);
+    console.log(`Check complete`);
     return;
   }
   await format(currentDir);
-  console.log(`Format success`);
 };
 
 module.exports = {
