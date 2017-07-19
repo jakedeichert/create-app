@@ -5,14 +5,17 @@ const log = require('utils/logger');
 const command = 'lint';
 const describe = 'run lint tests';
 
-listen((eventCode, ctx) => {
-  switch (eventCode) {
-    case events.lintCommandFail:
-      return log.errExit(`Failed to lint code`, ctx);
-  }
-});
+const startEventListener = () => {
+  listen((eventCode, ctx) => {
+    switch (eventCode) {
+      case events.lintCommandFail:
+        return log.errExit(`Failed to lint code`, ctx);
+    }
+  });
+};
 
 const handler = async () => {
+  startEventListener();
   await lint(currentDir);
 };
 

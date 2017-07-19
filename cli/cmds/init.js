@@ -6,16 +6,19 @@ const command = 'init <type>';
 const describe = 'create a new project';
 const builder = yargs => yargs.commandDir('init-cmds');
 
-listen(eventCode => {
-  switch (eventCode) {
-    case events.createDirFail:
-      return log.errExit(`Directory already exists`);
-    case events.cloneProjectFail:
-      return log.errExit(`Failed to clone project`);
-  }
-});
+const startEventListener = () => {
+  listen(eventCode => {
+    switch (eventCode) {
+      case events.createDirFail:
+        return log.errExit(`Directory already exists`);
+      case events.cloneProjectFail:
+        return log.errExit(`Failed to clone project`);
+    }
+  });
+};
 
 const initHandler = async ({ appName }, projectType) => {
+  startEventListener();
   await initProject(currentDir, appName, projectType);
 };
 

@@ -11,16 +11,19 @@ const builder = {
   },
 };
 
-listen((eventCode, ctx) => {
-  switch (eventCode) {
-    case events.formatCommandFail:
-      return log.errExit(`Failed to format code`, ctx);
-    case events.checkCommandFail:
-      return log.errExit(`Failed to run format check`, ctx);
-  }
-});
+const startEventListener = () => {
+  listen((eventCode, ctx) => {
+    switch (eventCode) {
+      case events.formatCommandFail:
+        return log.errExit(`Failed to format code`, ctx);
+      case events.checkCommandFail:
+        return log.errExit(`Failed to run format check`, ctx);
+    }
+  });
+};
 
 const handler = async argv => {
+  startEventListener();
   if (argv.check) {
     await check(currentDir);
     console.log(`Check complete`);
