@@ -1,5 +1,5 @@
 {
-  "name": "create-app",
+  "name": "@jakedeichert/create-app",
   "version": "1.0.0",
   "description": "A web app generator cli that abstracts away build configuration",
   "author": "Jake Deichert",
