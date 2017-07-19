@@ -1,7 +1,7 @@
 const { events, lint } = require('../../lib/lint');
 const { listen } = require('../../lib/utils/event-logger');
-const { currentDir } = require('utils/helpers');
-const log = require('utils/logger');
+const { currentDir } = require('../utils/helpers');
+const log = require('../utils/logger');
 const command = 'lint';
 const describe = 'run lint tests';
 

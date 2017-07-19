@@ -1,7 +1,7 @@
 const { events, format, check } = require('../../lib/format');
 const { listen } = require('../../lib/utils/event-logger');
-const { currentDir } = require('utils/helpers');
-const log = require('utils/logger');
+const { currentDir } = require('../utils/helpers');
+const log = require('../utils/logger');
 const command = 'format';
 const describe = 'run prettier';
 const builder = {
