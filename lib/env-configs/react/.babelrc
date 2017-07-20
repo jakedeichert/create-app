@@ -1,0 +1,46 @@
+{
+  "presets": [
+    "react"
+  ],
+  "plugins": [
+    "transform-class-properties",
+    "transform-object-rest-spread"
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ]
+      ]
+    },
+    "production": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "browsers": [
+                "last 2 versions",
+                "Chrome >= 40",
+                "not ie < 12",
+                "not ie_mob < 12"
+              ]
+            },
+            "modules": false,
+            "useBuiltIns": true
+          }
+        ]
+      ],
+      "plugins": [
+        "transform-class-properties",
+        "transform-object-rest-spread"
+      ]
+    }
+  }
+}
