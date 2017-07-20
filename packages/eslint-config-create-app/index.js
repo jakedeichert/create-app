@@ -1,3 +1,4 @@
+const OFF = 'off';
 const WARN = 'warn';
 const ERROR = 'error';
 
@@ -34,7 +35,7 @@ module.exports = {
     // Disallow the use of eval http://eslint.org/docs/rules/no-eval
     'no-eval': ERROR,
     // Disallow unnecessary parentheses http://eslint.org/docs/rules/no-extra-parens
-    'no-extra-parens': [WARN, 'all', { ignoreJSX: 'multi-line' }],
+    'no-extra-parens': OFF,
     // Disallow implied eval http://eslint.org/docs/rules/no-implied-eval
     'no-implied-eval': ERROR,
     // Disallow primitive wrapper instances http://eslint.org/docs/rules/no-new-wrappers
