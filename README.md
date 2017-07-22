@@ -5,11 +5,11 @@ A cli build tool for react projects that abstracts away configuration.
 
 ## Why?
 
-I have a few small react projects on the go and keeping their build dependencies up to date individually has become a hassle. I realized that most of my project setups are 95% the same which means I can share configuration to a certain extent through the use of cli tool.
+I have a few small react projects on the go and keeping their build dependencies up to date individually has become a hassle. I realized that most of my project setups are 95% the same which means I can share configuration to a certain extent.
 
 I was inspired by how [create-react-app][1] hides build configuration so cleanly. Although CRA is great, it doesn't fit my goals exactly.
 
-I made `create-app` to be a multipurpose build tool for myself. The first step I took was to move all build configuration from my [react-starter][2] project to `create-app` and then update the npm/yarn run commands to call `create-app` commands instead. This results in an extremely clean [package.json][3] file.
+I made `create-app` to be a multipurpose build tool for myself. The first step I took was to move all build configuration from my [react-starter][2] project to `create-app` and then update the npm/yarn run commands to call `create-app` commands instead. This also happens to result in an extremely clean [package.json][3] file.
 
 ### Commands
 
@@ -41,11 +41,18 @@ create-app init react my-react-app
 ~~~
 
 
+### Installation
+
+You really want to use this? It's heavily opinionated and only supports my starter projects... but okay!
+
+~~~sh
+yarn add --dev @jakedeichert/create-app
+~~~
 
 
-### Build Setup
+## Build Setup
 
-#### React
+### React
 
 Starter project: [react-starter][2]
 
@@ -65,7 +72,7 @@ Starter project: [react-starter][2]
 
 
 
-#### Other Environments
+### Other Environments
 
 Support for my other environment setups will be coming soon.
 

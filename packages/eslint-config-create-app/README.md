@@ -1,6 +1,6 @@
-# eslint-config
+# @jakedeichert/eslint-config-create-app
 
-My personal eslint config.
+An eslint config for `create-app`
 
 This includes rules for both ES2016 and React.
 
@@ -8,15 +8,8 @@ This includes rules for both ES2016 and React.
 ## Installation
 
 ~~~sh
-npm install --save-dev eslint babel-eslint @jakedeichert/eslint-config
+yarn add --dev @jakedeichert/create-app
 ~~~
-
-If you extend the React rules, you also have to install 2 more plugins.
-
-~~~sh
-npm install --save-dev eslint-plugin-react eslint-plugin-jsx-a11y
-~~~
-
 
 ## Extending
 
@@ -24,7 +17,7 @@ Update your `.eslintrc.js` file to extend the configs you want.
 
 ~~~js
 extends: [
-    '@jakedeichert/eslint-config',
-    '@jakedeichert/eslint-config/react'
+    '@jakedeichert/create-app/packages/eslint-config-create-app/index.js',
+    '@jakedeichert/create-app/packages/eslint-config-create-app/react.js'
 ]
 ~~~

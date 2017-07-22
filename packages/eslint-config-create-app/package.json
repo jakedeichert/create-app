@@ -1,7 +1,7 @@
 {
-  "name": "eslint-config-create-app",
-  "version": "3.0.0",
-  "description": "My personal eslint config",
+  "name": "@jakedeichert/eslint-config-create-app",
+  "version": "1.0.0",
+  "description": "An eslint config for create-app",
   "main": "index.js",
   "author": "Jake Deichert",
   "license": "MIT"
