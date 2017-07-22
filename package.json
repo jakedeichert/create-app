@@ -20,11 +20,11 @@
     "babel-loader": "^7.1.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.24.1",
     "chai": "^4.1.0",
+    "core-js": "^2.4.1",
     "css-loader": "^0.28.4",
     "eslint": "^4.2.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
@@ -39,6 +39,7 @@
     "webpack": "^3.3.0",
     "webpack-dashboard": "^0.4.0",
     "webpack-dev-server": "^2.5.1",
+    "whatwg-fetch": "^2.0.3",
     "yargs": "^8.0.2",
     "yauzl": "^2.8.0"
   }
