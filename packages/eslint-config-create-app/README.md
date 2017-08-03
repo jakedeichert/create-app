@@ -16,8 +16,9 @@ yarn add --dev @jakedeichert/create-app
 Update your `.eslintrc.js` file to extend the configs you want.
 
 ~~~js
-extends: [
-    '@jakedeichert/create-app/packages/eslint-config-create-app/index.js',
-    '@jakedeichert/create-app/packages/eslint-config-create-app/react.js'
-]
+module.exports = {
+  extends: [
+    './node_modules/@jakedeichert/create-app/lib/env-configs/react/eslintrc.js',
+  ],
+};
 ~~~
