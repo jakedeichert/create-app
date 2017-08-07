@@ -3,9 +3,7 @@
     [
       "env",
       {
-        "targets": {
-          "electron": "current"
-        },
+        "targets": "electron",
         "modules": false
       }
     ],
