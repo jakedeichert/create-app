@@ -3,9 +3,10 @@
     [
       "env",
       {
-        "targets": "electron",
-        "modules": false,
-        "useBuiltIns": true
+        "targets": {
+          "electron": "current"
+        },
+        "modules": false
       }
     ],
     "react"
@@ -13,19 +14,5 @@
   "plugins": [
     "transform-class-properties",
     "transform-object-rest-spread"
-  ],
-  "env": {
-    "test": {
-      "presets": [
-        [
-          "env",
-          {
-            "targets": "electron",
-            "useBuiltIns": true
-          }
-        ],
-        "react"
-      ]
-    }
-  }
+  ]
 }
