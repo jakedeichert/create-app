@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2016",
+    "jsx": "react",
+    "sourceMap": false,
+    "baseUrl": "../src",
+    "lib": [
+      "dom",
+      "es2015",
+      "es2016"
+    ],
+    "strict": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true
+  }
+}
