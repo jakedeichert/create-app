@@ -37,7 +37,9 @@ create-app build
 create-app docker start
 
 # Create a new react-starter based app
-create-app init react my-react-app
+create-app init react my-app
+# Or typescript-react-starter
+create-app init tsreact my-app
 ~~~
 
 
@@ -70,13 +72,26 @@ Starter project: [react-starter][2]
     * [jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y)
 
 
+### TypeScript React
+
+Starter project: [typescript-react-starter][4]
+
+* [typescript 2.4](https://github.com/Microsoft/TypeScript)
+* [webpack 3](https://github.com/webpack/webpack)
+* [css modules](https://github.com/css-modules/css-modules)
+* [jest](https://github.com/facebook/jest)
+* [prettier](https://github.com/prettier/prettier)
+* [tslint](https://github.com/palantir/tslint)
+    * [my custom config](https://github.com/jakedeichert/create-app/blob/master/lib/env-configs/typescript-react/tslint.json)
+    * [tslint-react](https://github.com/palantir/tslint-react)
+
 
 ### Other Environments
 
 Support for my other environment setups will be coming soon.
 
-* [TypeScript React](https://github.com/jakedeichert/react-typescript-starter)
-* Electron React
+* TypeScript React Electron
+* React Electron
 
 
 
@@ -86,3 +101,4 @@ Support for my other environment setups will be coming soon.
 [1]: https://github.com/facebookincubator/create-react-app
 [2]: https://github.com/jakedeichert/react-starter
 [3]: https://github.com/jakedeichert/react-starter/blob/master/package.json
+[4]: https://github.com/jakedeichert/typescript-react-starter
