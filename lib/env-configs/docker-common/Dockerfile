@@ -40,7 +40,7 @@ RUN /bin/bash -c "source /root/.nvm/nvm.sh \
 
 ENV PATH "/root/.yarn/bin:$PATH"
 
-# Install http-server (rather than installing nginx)
+# Install serve (rather than installing nginx)
 RUN /bin/bash -c "source /root/.nvm/nvm.sh \
     && yarn global add serve"
 
