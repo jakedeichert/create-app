@@ -34,7 +34,7 @@
     "file-loader": "^0.11.2",
     "jest": "^21.2.1",
     "mkdirp": "^0.5.1",
-    "prettier": "^1.5.3",
+    "prettier": "^1.7.4",
     "request": "^2.81.0",
     "style-loader": "^0.18.2",
     "ts-loader": "^2.3.2",
