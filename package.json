@@ -10,9 +10,8 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "format": "npm run _prettier:config -- --write '**/*.js'",
-    "format:check": "npm run _prettier:config -- --list-different '**/*.js'",
-    "_prettier:config": "prettier --single-quote --trailing-comma es5 --jsx-bracket-same-line"
+    "format": "prettier --write '**/*.js'",
+    "format:check": "prettier --list-different '**/*.js'"
   },
   "dependencies": {
     "babel-core": "^6.25.0",
