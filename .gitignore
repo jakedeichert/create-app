@@ -15,6 +15,9 @@ $RECYCLE.BIN/
 #######################################
 # node
 #######################################
+yarn.lock
+package-lock.json
+
 # Logs
 logs
 *.log
