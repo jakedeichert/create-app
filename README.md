@@ -81,9 +81,6 @@ Starter project: [typescript-react-starter][4]
 * [css modules](https://github.com/css-modules/css-modules)
 * [jest](https://github.com/facebook/jest)
 * [prettier](https://github.com/prettier/prettier)
-* [tslint](https://github.com/palantir/tslint)
-    * [my custom config](https://github.com/jakedeichert/create-app/blob/master/lib/env-configs/typescript-react/tslint.json)
-    * [tslint-react](https://github.com/palantir/tslint-react)
 
 
 ### Other Environments
