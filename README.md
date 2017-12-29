@@ -76,7 +76,7 @@ Starter project: [react-starter][2]
 
 Starter project: [typescript-react-starter][4]
 
-* [typescript 2.4](https://github.com/Microsoft/TypeScript)
+* [typescript 2.6](https://github.com/Microsoft/TypeScript)
 * [webpack 3](https://github.com/webpack/webpack)
 * [css modules](https://github.com/css-modules/css-modules)
 * [jest](https://github.com/facebook/jest)
