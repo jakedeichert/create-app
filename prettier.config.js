@@ -1,5 +1,1 @@
-module.exports = {
-  trailingComma: 'es5',
-  singleQuote: true,
-  jsxBracketSameLine: true,
-};
+module.exports = require('./lib/env-configs/prettier-common/prettier.config');
