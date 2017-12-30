@@ -19,8 +19,6 @@ create-app lint
 
 # Run tests
 create-app test
-# Run lint + tests for a proper CI run
-create-app test --full
 
 # Format code with prettier
 create-app format

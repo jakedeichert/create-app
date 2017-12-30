@@ -4,12 +4,6 @@ const { currentDir } = require('../utils/helpers');
 const log = require('../utils/logger');
 const command = 'test';
 const describe = 'run tests';
-const builder = {
-  f: {
-    alias: 'full',
-    describe: 'Run tests and lint',
-  },
-};
 
 const startEventListener = () => {
   listen((eventCode, ctx) => {
@@ -20,14 +14,13 @@ const startEventListener = () => {
   });
 };
 
-const handler = async argv => {
+const handler = async () => {
   startEventListener();
-  await test(currentDir, argv.full);
+  await test(currentDir);
 };
 
 module.exports = {
   command,
   describe,
-  builder,
   handler,
 };
