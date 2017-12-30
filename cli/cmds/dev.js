@@ -4,12 +4,6 @@ const { currentDir } = require('../utils/helpers');
 const log = require('../utils/logger');
 const command = 'dev';
 const describe = 'start webpack dev server';
-const builder = {
-  d: {
-    alias: 'dash',
-    describe: 'Use webpack dashboard',
-  },
-};
 
 const startEventListener = () => {
   listen((eventCode, ctx) => {
@@ -20,14 +14,13 @@ const startEventListener = () => {
   });
 };
 
-const handler = async argv => {
+const handler = async () => {
   startEventListener();
-  await dev(currentDir, argv.dash);
+  await dev(currentDir);
 };
 
 module.exports = {
   command,
   describe,
-  builder,
   handler,
 };
