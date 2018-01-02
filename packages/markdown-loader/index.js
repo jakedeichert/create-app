@@ -48,7 +48,7 @@ const applySyntaxHighlighting = ast => {
         if (highlightLines.includes(i + 1)) {
           return {
             highlighted: true,
-            code: `<span class="gatsby-highlight-code-line">${split}\n</span>`,
+            code: `<span class="prismjs-highlight-code-line">${split}\n</span>`,
           };
         }
         return { code: split };
@@ -65,7 +65,7 @@ const applySyntaxHighlighting = ast => {
     }
 
     node.type = 'html';
-    node.value = `<div class="gatsby-highlight">
+    node.value = `<div class="prismjs-highlight">
       <pre class="language-${lang.toLowerCase()}"><code>${highlightedCode}</code></pre>
       </div>`;
   });
