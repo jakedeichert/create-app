@@ -1,57 +1,60 @@
 FROM ubuntu
-MAINTAINER Jake Deichert
+LABEL maintainer="Jake Deichert"
 
-# Set the terminal so we can use commands like "clear"
+# ================================================
+# BASE ENVIRONMENT SETUP
+# ================================================
+
+# Set the terminal environment
 ENV TERM xterm
 ENV DEBIAN_FRONTEND noninteractive
 
-##############################################################
-# Set the locale
-##############################################################
-
-RUN locale-gen en_US.UTF-8
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
-
-##############################################################
-# Install packages
-##############################################################
-
+# Install helpful packages
+# xz-utils: required for untarring
 RUN apt-get update && apt-get install -y \
+    && apt-get install -y \
     git \
     vim \
-    curl
+    curl \
+    xz-utils
 
 # Clean unneeded packages after
 RUN apt-get --purge autoremove -y
 
-##############################################################
-# Install node and yarn with nvm
-##############################################################
+# ================================================
+# NODE SETUP
+# ================================================
 
 WORKDIR /root
-RUN curl -sS https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 
-RUN /bin/bash -c "source /root/.nvm/nvm.sh \
-    && nvm install node \
-    && nvm alias default node \
-    && curl -sS -L https://yarnpkg.com/install.sh | bash"
+# Must be supplied
+ARG USE_NODE_VERSION
 
+# Install node and yarn
+RUN curl -OL https://nodejs.org/dist/v${USE_NODE_VERSION}/node-v${USE_NODE_VERSION}-linux-x64.tar.xz \
+    && tar --no-same-owner -xf node-v${USE_NODE_VERSION}-linux-x64.tar.xz \
+    && mv node-v${USE_NODE_VERSION}-linux-x64 node \
+    && rm node-v${USE_NODE_VERSION}-linux-x64.tar.xz
+
+ENV PATH "/root/node/bin:$PATH"
 ENV PATH "/root/.yarn/bin:$PATH"
 
-# Install serve (rather than installing nginx)
-RUN /bin/bash -c "source /root/.nvm/nvm.sh \
-    && yarn global add serve"
+RUN curl -sS -L https://yarnpkg.com/install.sh | bash
 
-##############################################################
-# Define volume and port
-##############################################################
+# ================================================
+# ENV CONFIG
+# ================================================
 
-WORKDIR /var/www/html
-VOLUME /var/www/html
+# Copy scripts and config
+COPY root/ /root/
+RUN chmod -R 755 /root/scripts
+
+RUN mkdir -p /root/app
+WORKDIR /root/app
+VOLUME /root/app
+
 EXPOSE 8080
 
-# Build and serve the dist directory
+# The startup script
 # This only runs if the container is detached with -d
-CMD /bin/bash -c "source /root/.nvm/nvm.sh && yarn && yarn run build && serve /var/www/html/dist --port 8080"
+CMD /root/scripts/start.sh
