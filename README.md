@@ -30,6 +30,8 @@ create-app dev
 
 # Build for production
 create-app build
+# Or include a base url path when serving under a specific directory
+BASE_URL=react-starter create-app build
 
 # Serve the dist directory on localhost:8080
 create-app serve
