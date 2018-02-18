@@ -31,8 +31,15 @@ create-app dev
 # Build for production
 create-app build
 
+# Serve the dist directory on localhost:8080
+create-app serve
+# Or a different port
+create-app serve --port 4000
+
 # Build for production and serve through a docker container on localhost:8080
 create-app docker start
+# Or a different port
+create-app docker start --port 4000
 
 # Create a new react-starter based app
 create-app init react my-app
