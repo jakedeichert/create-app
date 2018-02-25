@@ -70,7 +70,7 @@ Starter project: [react-starter][2]
     * [react](https://babeljs.io/docs/plugins/preset-react/)
     * [transform-class-properties](https://babeljs.io/docs/plugins/transform-class-properties/)
     * [transform-object-rest-spread](https://babeljs.io/docs/plugins/transform-object-rest-spread/)
-* [webpack 3](https://github.com/webpack/webpack)
+* [webpack 4](https://github.com/webpack/webpack)
 * [jest](https://github.com/facebook/jest)
 * [eslint](https://github.com/eslint/eslint)
     * [my custom config](https://github.com/jakedeichert/create-app/tree/master/packages/eslint-config-create-app)
@@ -84,7 +84,7 @@ Starter project: [react-starter][2]
 Starter project: [typescript-react-starter][4]
 
 * [typescript 2.6](https://github.com/Microsoft/TypeScript)
-* [webpack 3](https://github.com/webpack/webpack)
+* [webpack 4](https://github.com/webpack/webpack)
 * [jest](https://github.com/facebook/jest)
 * [prettier](https://github.com/prettier/prettier)
 
