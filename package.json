@@ -1,6 +1,6 @@
 {
   "name": "@jakedeichert/create-app",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "description": "A cli build tool for react projects that abstracts away configuration",
   "author": "Jake Deichert",
   "license": "MIT",
@@ -26,7 +26,7 @@
     "connect-history-api-fallback": "^1.5.0",
     "core-js": "^2.4.1",
     "electron": "^1.7.9",
-    "electron-packager": "^10.1.0",
+    "electron-packager": "^11.0.1",
     "eslint": "^4.2.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.1.0",
@@ -39,7 +39,7 @@
     "prettier": "^1.7.4",
     "prismjs": "^1.9.0",
     "raw-loader": "^0.5.1",
-    "remark": "^8.0.0",
+    "remark": "^9.0.0",
     "request": "^2.81.0",
     "serve": "^6.4.10",
     "ts-loader": "^4.0.0",
@@ -50,7 +50,7 @@
     "webpack-cli": "^2.0.9",
     "webpack-serve": "^0.1.4",
     "whatwg-fetch": "^2.0.3",
-    "yargs": "^10.0.3",
+    "yargs": "^11.0.0",
     "yauzl": "^2.8.0"
   }
 }
