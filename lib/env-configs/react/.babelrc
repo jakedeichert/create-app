@@ -1,11 +1,6 @@
 {
-  "presets": [
-    "react"
-  ],
-  "plugins": [
-    "transform-class-properties",
-    "transform-object-rest-spread"
-  ],
+  "presets": ["react"],
+  "plugins": ["transform-class-properties", "transform-object-rest-spread"],
   "env": {
     "production": {
       "presets": [
@@ -13,12 +8,7 @@
           "env",
           {
             "targets": {
-              "browsers": [
-                "last 2 versions",
-                "Chrome >= 40",
-                "not ie < 12",
-                "not ie_mob < 12"
-              ]
+              "browsers": ["> 1%", "not ie < 12"]
             },
             "modules": false
             // Find out which polyfills would be required with debug:true
@@ -27,10 +17,7 @@
           }
         ]
       ],
-      "plugins": [
-        "transform-class-properties",
-        "transform-object-rest-spread"
-      ]
+      "plugins": ["transform-class-properties", "transform-object-rest-spread"]
     }
   }
 }
