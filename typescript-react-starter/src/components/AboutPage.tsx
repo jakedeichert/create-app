@@ -31,8 +31,8 @@ const AboutPage = () => (
     <Paragraph>
       Check it out here:
       <br />
-      <Link ext="https://github.com/jakedeichert/react-starter">
-        https://github.com/jakedeichert/react-starter
+      <Link ext="https://github.com/jakedeichert/create-app/tree/master/typescript-react-starter">
+        https://github.com/jakedeichert/create-app/tree/master/typescript-react-starter
       </Link>
     </Paragraph>
   </Wrapper>

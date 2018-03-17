@@ -83,7 +83,7 @@ Starter project: [react-starter][2]
 
 Starter project: [typescript-react-starter][4]
 
-* [typescript 2.6](https://github.com/Microsoft/TypeScript)
+* [typescript](https://github.com/Microsoft/TypeScript)
 * [webpack 4](https://github.com/webpack/webpack)
 * [jest](https://github.com/facebook/jest)
 * [prettier](https://github.com/prettier/prettier)
@@ -102,6 +102,6 @@ Support for my other environment setups will be coming soon.
 
 
 [1]: https://github.com/facebookincubator/create-react-app
-[2]: https://github.com/jakedeichert/react-starter
-[3]: https://github.com/jakedeichert/react-starter/blob/master/package.json
-[4]: https://github.com/jakedeichert/typescript-react-starter
+[2]: https://github.com/jakedeichert/create-app/tree/master/react-starter
+[3]: https://github.com/jakedeichert/create-app/blob/master/react-starter/package.json
+[4]: https://github.com/jakedeichert/create-app/tree/master/typescript-react-starter
