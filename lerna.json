@@ -1,0 +1,11 @@
+{
+  "lerna": "2.9.0",
+  "packages": [
+    "packages/*",
+    "react-starter",
+    "typescript-react-starter"
+  ],
+  "version": "independent",
+  "npmClient": "yarn",
+  "npmClientArgs": ["--pure-lockfile"]
+}

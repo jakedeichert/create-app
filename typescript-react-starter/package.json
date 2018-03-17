@@ -1,0 +1,38 @@
+{
+  "name": "@jakedeichert/typescript-react-starter",
+  "version": "1.3.0",
+  "description": "A TypeScript, React, Redux, Webpack, and Styled Components web app starter kit",
+  "author": "Jake Deichert",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "lint": "create-app lint",
+    "test": "create-app test",
+    "format": "create-app format",
+    "dev": "create-app dev",
+    "build": "create-app build",
+    "build:ghpages": "BASE_URL=typescript-react-starter create-app build",
+    "deploy": "./scripts/deploy_ghpages.sh",
+    "docker": "create-app docker start",
+    "serve": "create-app serve"
+  },
+  "dependencies": {
+    "immer": "^1.1.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "styled-components": "^3.1.6"
+  },
+  "devDependencies": {
+    "@jakedeichert/create-app": "^1.11.0",
+    "@types/jest": "^22.1.3",
+    "@types/node": "^9.4.6",
+    "@types/react": "^16.0.38",
+    "@types/react-dom": "^16.0.4",
+    "@types/react-redux": "^5.0.15",
+    "@types/react-router-dom": "^4.2.4"
+  }
+}

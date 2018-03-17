@@ -26,7 +26,7 @@ const runPrettier = async (isWrite, workingDir) => {
     '--config node_modules/@jakedeichert/create-app/lib/env-configs/prettier-common/prettier.config.js';
 
   return spawnStream(
-    'node_modules/prettier/bin/prettier.js',
+    'node_modules/prettier/bin-prettier.js',
     [writeOrCheck, configOption, files],
     {
       stdio: 'inherit',
