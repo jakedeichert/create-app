@@ -3,6 +3,8 @@
   "version": "1.3.0",
   "description": "A TypeScript, React, Redux, Webpack, and Styled Components web app starter kit",
   "author": "Jake Deichert",
+  "private": true,
+  "license": "MIT",
   "scripts": {
     "lint": "create-app lint",
     "test": "create-app test",
