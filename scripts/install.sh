@@ -20,7 +20,7 @@ echo "Installing typescript-react-starter..."
 cd $root_dir/typescript-react-starter
 yarn
 
-echo "Installing packages/create-app"
+echo "Installing packages/create-app..."
 cd $root_dir/typescript-react-starter
 yarn --no-lockfile
 
