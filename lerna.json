@@ -6,5 +6,6 @@
     "typescript-react-starter"
   ],
   "version": "independent",
-  "npmClient": "yarn"
+  "npmClient": "yarn",
+  "npmClientArgs": ["--pure-lockfile"]
 }
