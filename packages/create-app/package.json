@@ -4,7 +4,6 @@
   "description": "A cli build tool for react projects that abstracts away configuration",
   "author": "Jake Deichert",
   "license": "MIT",
-  "main": "lib/index.js",
   "scripts": {
     "lint": "eslint .",
     "format": "prettier --write '**/*.js'",

@@ -1,5 +1,9 @@
-const { events, format, check } = require('../../lib/format');
-const { listen } = require('../../lib/utils/event-logger');
+const {
+  events,
+  format,
+  check,
+} = require('@jakedeichert/create-app/lib/format');
+const { listen } = require('@jakedeichert/create-app/lib/utils/event-logger');
 const { currentDir } = require('../utils/helpers');
 const log = require('../utils/logger');
 exports.command = 'format';

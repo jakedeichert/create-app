@@ -1,5 +1,5 @@
-const { events, serve } = require('../../lib/serve');
-const { listen } = require('../../lib/utils/event-logger');
+const { events, serve } = require('@jakedeichert/create-app/lib/serve');
+const { listen } = require('@jakedeichert/create-app/lib/utils/event-logger');
 const { currentDir } = require('../utils/helpers');
 const log = require('../utils/logger');
 exports.command = 'serve';

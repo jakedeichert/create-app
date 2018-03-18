@@ -1,5 +1,5 @@
-const { events, lint } = require('../../lib/lint');
-const { listen } = require('../../lib/utils/event-logger');
+const { events, lint } = require('@jakedeichert/create-app/lib/lint');
+const { listen } = require('@jakedeichert/create-app/lib/utils/event-logger');
 const { currentDir } = require('../utils/helpers');
 const log = require('../utils/logger');
 exports.command = 'lint';
