@@ -1,0 +1,20 @@
+{
+  "name": "@jakedeichert/create-app-cli",
+  "version": "1.0.0",
+  "description":
+    "A cli build tool for react projects that abstracts away configuration",
+  "author": "Jake Deichert",
+  "license": "MIT",
+  "bin": {
+    "create-app": "bin/index.js"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "format": "prettier --write '**/*.js'",
+    "format:check": "prettier --list-different '**/*.js'"
+  },
+  "dependencies": {
+    "@jakedeichert/create-app-cli": "^1.0.0",
+    "yargs": "^11.0.0"
+  }
+}
