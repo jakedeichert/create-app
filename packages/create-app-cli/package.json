@@ -1,6 +1,6 @@
 {
   "name": "@jakedeichert/create-app-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A cli build tool for react projects that abstracts away configuration",
   "author": "Jake Deichert",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "format:check": "prettier --list-different '**/*.js'"
   },
   "dependencies": {
-    "@jakedeichert/create-app": "^2.0.2",
+    "@jakedeichert/create-app": "^2.0.3",
     "yargs": "^11.0.0"
   }
 }
