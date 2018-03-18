@@ -2,9 +2,9 @@ const { events, format, check } = require('../../lib/format');
 const { listen } = require('../../lib/utils/event-logger');
 const { currentDir } = require('../utils/helpers');
 const log = require('../utils/logger');
-const command = 'format';
-const describe = 'run prettier';
-const builder = {
+exports.command = 'format';
+exports.describe = 'run prettier';
+exports.builder = {
   c: {
     alias: 'check',
     describe: 'List files that need to be formatted',
@@ -22,7 +22,7 @@ const startEventListener = () => {
   });
 };
 
-const handler = async argv => {
+exports.handler = async argv => {
   startEventListener();
   if (argv.check) {
     await check(currentDir);
@@ -30,11 +30,4 @@ const handler = async argv => {
     return;
   }
   await format(currentDir);
-};
-
-module.exports = {
-  command,
-  describe,
-  builder,
-  handler,
 };

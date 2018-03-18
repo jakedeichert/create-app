@@ -2,9 +2,9 @@ const { events, initProject } = require('../../lib/init');
 const { listen } = require('../../lib/utils/event-logger');
 const { currentDir } = require('../utils/helpers');
 const log = require('../utils/logger');
-const command = 'init <type>';
-const describe = 'create a new project';
-const builder = yargs => yargs.commandDir('init-cmds');
+exports.command = 'init <type>';
+exports.describe = 'create a new project';
+exports.builder = yargs => yargs.commandDir('init-cmds');
 
 const startEventListener = () => {
   listen(eventCode => {
@@ -17,14 +17,7 @@ const startEventListener = () => {
   });
 };
 
-const initHandler = async ({ appName }, projectType) => {
+exports.handler = async ({ appName }, projectType) => {
   startEventListener();
   await initProject(currentDir, appName, projectType);
-};
-
-module.exports = {
-  command,
-  describe,
-  builder,
-  initHandler,
 };

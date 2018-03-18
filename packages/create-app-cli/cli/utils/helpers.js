@@ -1,5 +1,1 @@
-const currentDir = process.cwd();
-
-module.exports = {
-  currentDir,
-};
+exports.currentDir = process.cwd();

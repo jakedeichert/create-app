@@ -14,7 +14,7 @@
     "format:check": "prettier --list-different '**/*.js'"
   },
   "dependencies": {
-    "@jakedeichert/create-app-cli": "^1.0.0",
+    "@jakedeichert/create-app": "^1.0.0",
     "yargs": "^11.0.0"
   }
 }
