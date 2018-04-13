@@ -1,5 +1,5 @@
 const { send } = require('./utils/event-logger');
-const { loadProjectConfig, spawnStream } = require('./utils/helpers');
+const { loadProjectConfig, spawnStream, getPath } = require('./utils/helpers');
 
 const events = {
   lifeCycleBegin: 'docker.lifeCycle.begin',
@@ -45,7 +45,9 @@ const runReactInit = async workingDir => {
   `;
   return spawnStream(buildCmd, [], {
     stdio: 'inherit',
-    cwd: `${workingDir}/node_modules/@jakedeichert/create-app/lib/env-configs/docker-common`,
+    cwd: `${workingDir}/${getPath(
+      `@jakedeichert/create-app/lib/env-configs/docker-common`
+    )}`,
   });
 };
 

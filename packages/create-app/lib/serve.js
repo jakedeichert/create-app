@@ -1,5 +1,5 @@
 const { send } = require('./utils/event-logger');
-const { spawnStream } = require('./utils/helpers');
+const { spawnStream, getPath } = require('./utils/helpers');
 
 const events = {
   lifeCycleBegin: 'serve.lifeCycle.begin',
@@ -16,7 +16,7 @@ exports.serve = async (workingDir, port = '8080') => {
 
 const runServe = async (workingDir, port) => {
   return spawnStream(
-    'node_modules/serve/bin/serve.js dist',
+    `${getPath(`serve/bin/serve.js`)} dist`,
     [`--port ${port} --single`],
     {
       stdio: 'inherit',

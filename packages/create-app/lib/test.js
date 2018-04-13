@@ -1,6 +1,6 @@
 const path = require('path');
 const { send } = require('./utils/event-logger');
-const { loadProjectConfig, spawnStream } = require('./utils/helpers');
+const { loadProjectConfig, spawnStream, getPath } = require('./utils/helpers');
 const events = {
   lifeCycleBegin: 'test.lifeCycle.begin',
   lifeCycleEnd: 'test.lifeCycle.end',
@@ -27,12 +27,12 @@ const run = async (workingDir, projectType) => {
 const runJest = async (workingDir, projectType) => {
   const configFile = 'jest.config.js';
   const configPath = path.join(
-    `node_modules/@jakedeichert/create-app/lib/env-configs/${projectType}`,
+    getPath(`@jakedeichert/create-app/lib/env-configs/${projectType}`),
     configFile
   );
   // Jest sets NODE_ENV=test
   return spawnStream(
-    `node_modules/jest/bin/jest.js`,
+    getPath(`jest/bin/jest.js`),
     [`--config ${configPath} --rootDir ${workingDir}`],
     {
       stdio: 'inherit',

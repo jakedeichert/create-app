@@ -1,10 +1,10 @@
 const path = require('path');
-const { loadProjectConfig } = require('../../utils/helpers');
+const { loadProjectConfig, getPath } = require('../../utils/helpers');
 
 const workingDir = process.cwd();
 const thisModuleDir = path.join(
   workingDir,
-  'node_modules/@jakedeichert/create-app'
+  getPath('@jakedeichert/create-app')
 );
 const { type } = loadProjectConfig(workingDir);
 

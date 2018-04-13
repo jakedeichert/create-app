@@ -1,5 +1,5 @@
 const { send } = require('./utils/event-logger');
-const { spawnStream } = require('./utils/helpers');
+const { spawnStream, getPath } = require('./utils/helpers');
 const events = {
   lifeCycleBegin: 'format.lifeCycle.begin',
   lifeCycleEnd: 'format.lifeCycle.end',
@@ -22,11 +22,12 @@ const check = async workingDir => {
 const runPrettier = async (isWrite, workingDir) => {
   const writeOrCheck = isWrite ? '--write' : '--list-different';
   const files = "'{src,test,lib,electron}/**/*.{js,jsx,ts,tsx,css}' '*.js'";
-  const configOption =
-    '--config node_modules/@jakedeichert/create-app/lib/env-configs/prettier-common/prettier.config.js';
+  const configOption = `--config ${getPath(
+    `@jakedeichert/create-app/lib/env-configs/prettier-common/prettier.config.js`
+  )}`;
 
   return spawnStream(
-    'node_modules/prettier/bin-prettier.js',
+    getPath('prettier/bin-prettier.js'),
     [writeOrCheck, configOption, files],
     {
       stdio: 'inherit',

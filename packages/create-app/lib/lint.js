@@ -1,6 +1,6 @@
 const path = require('path');
 const { send } = require('./utils/event-logger');
-const { loadProjectConfig, spawnStream } = require('./utils/helpers');
+const { loadProjectConfig, spawnStream, getPath } = require('./utils/helpers');
 const events = {
   lifeCycleBegin: 'lint.lifeCycle.begin',
   lifeCycleEnd: 'lint.lifeCycle.end',
@@ -33,7 +33,7 @@ const runLint = async (workingDir, projectType) => {
 const runReactEslint = async (workingDir, isTest) => {
   const configFile = isTest ? 'eslintrc.test.js' : 'eslintrc.js';
   const configPath = path.join(
-    'node_modules/@jakedeichert/create-app/lib/env-configs/react',
+    getPath('@jakedeichert/create-app/lib/env-configs/react'),
     configFile
   );
   const root = isTest ? './test' : '.';
@@ -41,7 +41,7 @@ const runReactEslint = async (workingDir, isTest) => {
     ? `--ignore-pattern 'dist/' --ignore-pattern 'test/'`
     : '';
   return spawnStream(
-    'node_modules/eslint/bin/eslint.js',
+    getPath('eslint/bin/eslint.js'),
     [root, `--config ${configPath} ${ignores}`],
     {
       stdio: 'inherit',
@@ -53,7 +53,7 @@ const runReactEslint = async (workingDir, isTest) => {
 const runReactElectronEslint = async (workingDir, isTest) => {
   const configFile = isTest ? 'eslintrc.test.js' : 'eslintrc.js';
   const configPath = path.join(
-    'node_modules/@jakedeichert/create-app/lib/env-configs/react-electron',
+    getPath('@jakedeichert/create-app/lib/env-configs/react-electron'),
     configFile
   );
   const root = isTest ? './test' : '.';
@@ -61,7 +61,7 @@ const runReactElectronEslint = async (workingDir, isTest) => {
     ? `--ignore-pattern 'dist/' --ignore-pattern 'test/' --ignore-pattern 'package/'`
     : '';
   return spawnStream(
-    'node_modules/eslint/bin/eslint.js',
+    getPath('eslint/bin/eslint.js'),
     [root, `--config ${configPath} ${ignores}`],
     {
       stdio: 'inherit',

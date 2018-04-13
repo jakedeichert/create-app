@@ -1,5 +1,5 @@
 const { send } = require('./utils/event-logger');
-const { loadProjectConfig, spawnStream } = require('./utils/helpers');
+const { loadProjectConfig, spawnStream, getPath } = require('./utils/helpers');
 const events = {
   lifeCycleBegin: 'dev.lifeCycle.begin',
   lifeCycleEnd: 'dev.lifeCycle.end',
@@ -40,9 +40,11 @@ const cleanDistDirectory = async workingDir => {
 };
 
 const runWebpack = async (workingDir, projectType) => {
-  const configPath = `node_modules/@jakedeichert/create-app/lib/env-configs/${projectType}/webpack.config.js`;
+  const configPath = getPath(
+    `@jakedeichert/create-app/lib/env-configs/${projectType}/webpack.config.js`
+  );
   return spawnStream(
-    `node_modules/webpack-serve/cli.js`,
+    getPath(`webpack-serve/cli.js`),
     [`--config ${configPath}`],
     {
       stdio: 'inherit',
@@ -59,7 +61,7 @@ const copyElectronConfig = async (workingDir, env) => {
 };
 
 const runElectron = async workingDir => {
-  const electron = 'node_modules/electron/cli.js';
+  const electron = getPath('electron/cli.js');
   return spawnStream(`${electron} .`, [], {
     stdio: 'inherit',
     cwd: workingDir,

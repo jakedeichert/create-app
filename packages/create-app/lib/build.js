@@ -1,16 +1,16 @@
 const { send } = require('./utils/event-logger');
-const { loadProjectConfig, spawnStream } = require('./utils/helpers');
-const events = {
+const { loadProjectConfig, spawnStream, getPath } = require('./utils/helpers');
+exports.events = {
   lifeCycleBegin: 'build.lifeCycle.begin',
   lifeCycleEnd: 'build.lifeCycle.end',
   commandFail: 'build.command.fail',
 };
 
-const build = async (workingDir, isDevMode) => {
-  send(events.lifeCycleBegin);
+exports.build = async (workingDir, isDevMode) => {
+  send(exports.events.lifeCycleBegin);
   const config = loadProjectConfig(workingDir);
   await run(workingDir, isDevMode, config.type);
-  send(events.lifeCycleEnd);
+  send(exports.events.lifeCycleEnd);
 };
 
 const run = async (workingDir, isDevMode, projectType) => {
@@ -38,15 +38,14 @@ const cleanDistDirectory = async workingDir => {
 // https://webpack.js.org/guides/production/
 const runWebpack = async (workingDir, isDevMode, projectType) => {
   const env = !isDevMode ? 'NODE_ENV=production ' : '';
-  const configPath = `node_modules/@jakedeichert/create-app/lib/env-configs/${projectType}/webpack.config.js`;
-  return spawnStream(
-    `${env} node_modules/webpack-cli/bin/webpack.js`,
-    [`--config ${configPath}`],
-    {
-      stdio: 'inherit',
-      cwd: workingDir,
-    }
-  ).catch(commandFail);
+  const configPath = getPath(
+    `@jakedeichert/create-app/lib/env-configs/${projectType}/webpack.config.js`
+  );
+  const webpackBinPath = getPath('webpack-cli/bin/webpack.js');
+  return spawnStream(`${env} ${webpackBinPath}`, [`--config ${configPath}`], {
+    stdio: 'inherit',
+    cwd: workingDir,
+  }).catch(commandFail);
 };
 
 const copyElectronConfig = async (workingDir, env) => {
@@ -58,10 +57,10 @@ const copyElectronConfig = async (workingDir, env) => {
 
 const buildElectronPackage = async workingDir => {
   const env = 'NODE_ENV=production';
-  const electronPackager = 'node_modules/electron-packager/cli.js';
+  const electronPackagerPath = getPath('electron-packager/cli.js');
   // NOTE: packageManager needs to be yarn until they fix npm prune --production
   return spawnStream(
-    `${env} ${electronPackager} .`,
+    `${env} ${electronPackagerPath} .`,
     [
       '--out package --electronVersion 1.6.11 --overwrite --packageManager yarn',
     ],
@@ -73,11 +72,6 @@ const buildElectronPackage = async workingDir => {
 };
 
 const commandFail = err => {
-  send(events.commandFail, { err });
+  send(exports.events.commandFail, { err });
   throw err;
-};
-
-module.exports = {
-  events,
-  build,
 };

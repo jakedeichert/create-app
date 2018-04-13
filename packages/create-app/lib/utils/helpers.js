@@ -5,7 +5,7 @@ const mkdirp = require('mkdirp');
 const request = require('request');
 const yauzl = require('yauzl');
 
-const createDir = name => {
+exports.createDir = name => {
   return new Promise((resolve, reject) => {
     fs.mkdir(name, err => {
       if (err) return reject(err);
@@ -14,12 +14,12 @@ const createDir = name => {
   });
 };
 
-const loadProjectConfig = workingDir => {
+exports.loadProjectConfig = workingDir => {
   const configPath = path.join(workingDir, 'createapp.config.js');
   return require(configPath);
 };
 
-const download = async (url, filepath) => {
+exports.download = async (url, filepath) => {
   return new Promise((resolve, reject) => {
     request(url)
       .on('response', response => {
@@ -34,7 +34,7 @@ const download = async (url, filepath) => {
   });
 };
 
-const unzip = async (zipFile, destDir) => {
+exports.unzip = async (zipFile, destDir) => {
   return new Promise((resolve, reject) => {
     yauzl.open(
       zipFile,
@@ -70,7 +70,11 @@ const unzip = async (zipFile, destDir) => {
 };
 
 // Spawn a child process and stream the output.
-const spawnStream = (cmd, args = [], { stdio = 'pipe', shell = true, cwd }) => {
+exports.spawnStream = (
+  cmd,
+  args = [],
+  { stdio = 'pipe', shell = true, cwd }
+) => {
   return new Promise((resolve, reject) => {
     const child = spawn(cmd, args, { stdio, cwd, shell });
     child.on('error', reject);
@@ -86,10 +90,18 @@ const spawnStream = (cmd, args = [], { stdio = 'pipe', shell = true, cwd }) => {
   });
 };
 
-module.exports = {
-  loadProjectConfig,
-  createDir,
-  download,
-  unzip,
-  spawnStream,
+exports.doesFileExist = path => {
+  try {
+    fs.statSync(path);
+    return true;
+  } catch (err) {
+    return false;
+  }
+};
+
+exports.getPath = path => {
+  const linkedModule = `node_modules/@jakedeichert/create-app-cli/node_modules/${path}`;
+  if (exports.doesFileExist(linkedModule)) return linkedModule;
+  const rootModule = `node_modules/${path}`;
+  return rootModule;
 };
