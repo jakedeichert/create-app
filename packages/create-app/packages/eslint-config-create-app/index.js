@@ -30,6 +30,8 @@ module.exports = {
     'no-await-in-loop': ERROR,
     // Disallow the use of console http://eslint.org/docs/rules/no-console
     'no-console': WARN,
+    // Disallow the use of debugger https://eslint.org/docs/rules/no-debugger
+    'no-debugger': WARN,
     // Disallow return before else http://eslint.org/docs/rules/no-else-return
     'no-else-return': WARN,
     // Disallow the use of eval http://eslint.org/docs/rules/no-eval
