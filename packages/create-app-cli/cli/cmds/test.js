@@ -4,7 +4,13 @@ const { currentDir } = require('../utils/helpers');
 const log = require('../utils/logger');
 exports.command = 'test';
 exports.describe = 'run tests';
-
+exports.builder = {
+  c: {
+    alias: 'clear-cache',
+    describe: 'Skip jests cache',
+    default: false,
+  },
+};
 const startEventListener = () => {
   listen((eventCode, ctx) => {
     switch (eventCode) {
@@ -14,7 +20,8 @@ const startEventListener = () => {
   });
 };
 
-exports.handler = async () => {
+exports.handler = async argv => {
+  const { clearCache } = argv;
   startEventListener();
-  await test(currentDir);
+  await test(currentDir, clearCache);
 };

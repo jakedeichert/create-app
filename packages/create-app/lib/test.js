@@ -1,39 +1,40 @@
 const path = require('path');
 const { send } = require('./utils/event-logger');
 const { loadProjectConfig, spawnStream, getPath } = require('./utils/helpers');
-const events = {
+exports.events = {
   lifeCycleBegin: 'test.lifeCycle.begin',
   lifeCycleEnd: 'test.lifeCycle.end',
   commandFail: 'test.command.fail',
 };
 
-const test = async workingDir => {
-  send(events.lifeCycleBegin);
+exports.test = async (workingDir, clearCache) => {
+  send(exports.events.lifeCycleBegin);
   const config = loadProjectConfig(workingDir);
-  await run(workingDir, config.type);
-  send(events.lifeCycleEnd);
+  await run(workingDir, config.type, clearCache);
+  send(exports.events.lifeCycleEnd);
 };
 
-const run = async (workingDir, projectType) => {
+const run = async (workingDir, projectType, clearCache) => {
   switch (projectType) {
     case 'react':
     case 'react-electron':
     case 'typescript-react':
-      await runJest(workingDir, projectType);
+      await runJest(workingDir, projectType, clearCache);
       break;
   }
 };
 
-const runJest = async (workingDir, projectType) => {
+const runJest = async (workingDir, projectType, clearCache) => {
   const configFile = 'jest.config.js';
   const configPath = path.join(
     getPath(`@jakedeichert/create-app/lib/env-configs/${projectType}`),
     configFile
   );
   // Jest sets NODE_ENV=test
+  const noCache = clearCache ? '--no-cache' : '';
   return spawnStream(
     getPath(`jest/bin/jest.js`),
-    [`--config ${configPath} --rootDir ${workingDir}`],
+    [`--config ${configPath} ${noCache} --rootDir ${workingDir}`],
     {
       stdio: 'inherit',
       cwd: workingDir,
@@ -42,11 +43,6 @@ const runJest = async (workingDir, projectType) => {
 };
 
 const commandFail = err => {
-  send(events.commandFail, { err });
+  send(exports.events.commandFail, { err });
   throw err;
-};
-
-module.exports = {
-  events,
-  test,
 };
