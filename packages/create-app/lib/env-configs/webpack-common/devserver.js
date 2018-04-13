@@ -15,9 +15,7 @@ module.exports = (config, workingDir) => {
     content: path.join(workingDir, 'dist'),
 
     // https://github.com/webpack-contrib/webpack-serve#hot
-    hot: {
-      hot: false,
-    },
+    hot: false,
 
     // Required so that reloading a react-router page will work correctly
     // instead of not being able to find that route.
