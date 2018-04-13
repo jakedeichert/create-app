@@ -100,8 +100,10 @@ exports.doesFileExist = path => {
 };
 
 exports.getPath = path => {
-  const linkedModule = `node_modules/@jakedeichert/create-app-cli/node_modules/${path}`;
-  if (exports.doesFileExist(linkedModule)) return linkedModule;
+  const linkedLibModule = `node_modules/@jakedeichert/create-app-cli/node_modules/@jakedeichert/create-app/node_modules/${path}`;
+  if (exports.doesFileExist(linkedLibModule)) return linkedLibModule;
+  const linkedCliModule = `node_modules/@jakedeichert/create-app-cli/node_modules/${path}`;
+  if (exports.doesFileExist(linkedCliModule)) return linkedCliModule;
   const rootModule = `node_modules/${path}`;
   return rootModule;
 };

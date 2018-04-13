@@ -17,7 +17,7 @@ const config = {
 require('../webpack-common/entry.js')(config, workingDir, type);
 require('../webpack-common/watch.js')(config);
 require('../webpack-common/output.js')(config, workingDir);
-require('../webpack-common/resolve.js')(config);
+require('../webpack-common/resolve.js')(config, workingDir);
 require('../webpack-common/optimizations.js')(config);
 require('../webpack-common/loaders.js')(config, thisModuleDir, type);
 require('../webpack-common/plugins.js')(config);
