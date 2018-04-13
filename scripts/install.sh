@@ -12,13 +12,13 @@ root_dir="$THIS_SCRIPTS_DIR/.."
 # lerna bootstrap only, it doesn't install all modules and submodules
 # since it just links them instead.
 
-echo "Installing react-starter..."
-cd $root_dir/react-starter
-yarn
+# echo "Installing react-starter..."
+# cd $root_dir/react-starter
+# yarn
 
-echo "Installing typescript-react-starter..."
-cd $root_dir/typescript-react-starter
-yarn
+# echo "Installing typescript-react-starter..."
+# cd $root_dir/typescript-react-starter
+# yarn
 
 echo "Installing lerna..."
 cd $root_dir
