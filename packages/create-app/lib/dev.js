@@ -1,5 +1,10 @@
 const { send } = require('./utils/event-logger');
-const { loadProjectConfig, spawnStream, getPath } = require('./utils/helpers');
+const {
+  loadProjectConfig,
+  spawnStream,
+  getPath,
+  setEnv,
+} = require('./utils/helpers');
 const events = {
   lifeCycleBegin: 'dev.lifeCycle.begin',
   lifeCycleEnd: 'dev.lifeCycle.end',
@@ -7,6 +12,7 @@ const events = {
 };
 
 const dev = async workingDir => {
+  setEnv('dev', 'server_mode', true);
   send(events.lifeCycleBegin);
   const config = loadProjectConfig(workingDir);
   await run(workingDir, config.type);
