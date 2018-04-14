@@ -9,6 +9,10 @@ exports.builder = {
     alias: 'dev',
     describe: 'Build in dev mode, not for production',
   },
+  i: {
+    alias: 'info',
+    describe: 'Run with webpack bundle analyzer',
+  },
 };
 
 const startEventListener = () => {
@@ -21,6 +25,7 @@ const startEventListener = () => {
 };
 
 exports.handler = async argv => {
+  const { dev, info } = argv;
   startEventListener();
-  await build(currentDir, argv.dev);
+  await build(currentDir, dev, info);
 };

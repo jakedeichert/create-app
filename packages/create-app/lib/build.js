@@ -1,12 +1,18 @@
 const { send } = require('./utils/event-logger');
-const { loadProjectConfig, spawnStream, getPath } = require('./utils/helpers');
+const {
+  loadProjectConfig,
+  spawnStream,
+  getPath,
+  setEnv,
+} = require('./utils/helpers');
 exports.events = {
   lifeCycleBegin: 'build.lifeCycle.begin',
   lifeCycleEnd: 'build.lifeCycle.end',
   commandFail: 'build.command.fail',
 };
 
-exports.build = async (workingDir, isDevMode) => {
+exports.build = async (workingDir, isDevMode, infoAnalyzer) => {
+  setEnv('build', 'info', !!infoAnalyzer);
   send(exports.events.lifeCycleBegin);
   const config = loadProjectConfig(workingDir);
   await run(workingDir, isDevMode, config.type);

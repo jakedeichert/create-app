@@ -8,7 +8,6 @@ exports.builder = {
   c: {
     alias: 'clear-cache',
     describe: 'Skip jests cache',
-    default: false,
   },
 };
 const startEventListener = () => {

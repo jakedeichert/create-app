@@ -107,3 +107,18 @@ exports.getPath = path => {
   const rootModule = `node_modules/${path}`;
   return rootModule;
 };
+
+exports.setEnv = (cmdName, varName, value) => {
+  const cmd = cmdName.toUpperCase();
+  const name = varName.toUpperCase();
+  process.env[`CREATE_APP_CMD_${cmd}_${name}`] = value;
+};
+
+exports.getEnv = (cmdName, varName) => {
+  const cmd = cmdName.toUpperCase();
+  const name = varName.toUpperCase();
+  const val = process.env[`CREATE_APP_CMD_${cmd}_${name}`];
+  if (val === 'true') return true;
+  if (val === 'false') return false;
+  return val;
+};

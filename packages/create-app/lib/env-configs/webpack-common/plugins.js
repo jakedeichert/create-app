@@ -1,7 +1,9 @@
 const { EnvironmentPlugin } = require('webpack');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { getEnv } = require('../../utils/helpers');
 
 module.exports = config => {
-  config.plugins = [envVariables()];
+  config.plugins = [envVariables(), bundleAnalyzer()].filter(v => !!v);
 };
 
 const envVariables = () =>
@@ -16,3 +18,7 @@ const envVariables = () =>
     // Useful to specify a type of build. Example: static
     BUILD_TYPE: false,
   });
+
+// https://github.com/webpack-contrib/webpack-bundle-analyzer
+const bundleAnalyzer = () =>
+  getEnv('build', 'info') && new BundleAnalyzerPlugin();
