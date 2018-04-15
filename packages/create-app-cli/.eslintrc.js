@@ -1,15 +1,5 @@
 const OFF = 'off';
 
 module.exports = {
-  root: true,
-
-  env: {
-    node: true,
-  },
-
-  extends: './packages/eslint-config-create-app/index.js',
-
-  rules: {
-    'no-console': OFF,
-  },
+  extends: './node_modules/@jakedeichert/create-app/.eslintrc.js',
 };
