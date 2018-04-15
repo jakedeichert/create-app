@@ -5,6 +5,6 @@ module.exports = (config, workingDir) => {
     path: path.join(workingDir, 'dist/'),
     publicPath: '/',
     filename: 'bundle/[name].bundle.js',
-    chunkFilename: 'bundle/[name].bundle.js',
+    // chunkFilename: 'bundle/[name].bundle.js',
   };
 };
