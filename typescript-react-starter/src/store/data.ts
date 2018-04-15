@@ -59,7 +59,7 @@ export const actions = {
     return async (dispatch: Function) => {
       const results = await exampleService
         .get(id)
-        .catch(actionErr(t.RECEIVE_DATA_ERR));
+        .catch(actionErr(dispatch, t.RECEIVE_DATA_ERR));
       dispatch(recieveData(results));
     };
   },

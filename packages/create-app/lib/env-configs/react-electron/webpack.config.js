@@ -15,14 +15,14 @@ const config = {
   plugins: [],
 };
 
-require('../webpack-common/entry.js')(config, workingDir, type);
-require('../webpack-common/watch.js')(config);
-require('../webpack-common/output.js')(config, workingDir);
-require('../webpack-common/resolve.js')(config);
-require('../webpack-common/optimizations.js')(config);
-require('../webpack-common/loaders.js')(config, thisModuleDir, type);
-require('../webpack-common/plugins.js')(config);
-require('../webpack-common/sourcemap.js')(config);
-require('../webpack-common/devserver.js')(config, workingDir);
+require('../webpack-common/entry')(config, workingDir, type);
+require('../webpack-common/watch')(config);
+require('../webpack-common/output')(config, workingDir);
+require('../webpack-common/resolve')(config, workingDir);
+require('../webpack-common/optimizations')(config);
+require('../webpack-common/loaders')(config, thisModuleDir, type);
+require('../webpack-common/plugins')(config);
+require('../webpack-common/sourcemap')(config);
+require('../webpack-common/devserver')(config, workingDir);
 
 module.exports = config;
