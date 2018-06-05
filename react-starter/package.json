@@ -1,7 +1,7 @@
 {
   "name": "@jakedeichert/react-starter",
   "description": "A React, Redux, Babel, Webpack, and Styled Components web app starter kit",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "author": "Jake Deichert",
   "private": true,
   "license": "MIT",

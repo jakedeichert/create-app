@@ -42,11 +42,6 @@ create-app serve --port 4000
 create-app docker start
 # Or a different port
 create-app docker start --port 4000
-
-# Create a new react-starter based app
-create-app init react my-app
-# Or typescript-react-starter
-create-app init tsreact my-app
 ~~~
 
 
