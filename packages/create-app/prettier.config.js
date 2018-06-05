@@ -1,1 +1,5 @@
-module.exports = require('./create-app/lib/env-configs/prettier-common/prettier.config');
+module.exports = {
+  trailingComma: 'es5',
+  singleQuote: true,
+  jsxBracketSameLine: true,
+};
