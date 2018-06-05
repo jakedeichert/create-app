@@ -2,24 +2,26 @@ const key = 'counter';
 const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
 const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
 
-const initialState = 0;
+export const initialState = {
+  value: 0,
+};
 
-export default (state = initialState, action) => {
+export const reducer = (state, action, draft) => {
   switch (action.type) {
     case INCREMENT_COUNTER: {
-      return state + 1;
+      draft.value += 1;
+      break;
     }
     case DECREMENT_COUNTER: {
-      return state - 1;
+      draft.value -= 1;
+      break;
     }
-    default:
-      return state;
   }
 };
 
 export const selectors = {};
 
-selectors.get = state => state[key];
+selectors.get = state => state[key].value;
 
 export const actions = {};
 

@@ -1,7 +1,4 @@
-import React from 'react';
-import pt from 'prop-types';
-import { connect } from 'react-redux';
-import styled from 'styled-components';
+import { React, pt, connect, styled } from 'utils/component';
 import {
   actions as counterActions,
   selectors as counterSelectors,

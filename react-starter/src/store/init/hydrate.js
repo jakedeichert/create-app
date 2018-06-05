@@ -1,5 +1,5 @@
-import Data from 'models/Data';
 import { camelCaseDeep } from 'utils/obj';
+import { mapById } from 'utils/storeHelpers';
 
 /**
  * Let initial app data from server override reducer defaults.
@@ -10,16 +10,10 @@ import { camelCaseDeep } from 'utils/obj';
  * See `/static/html/index.html` for example data.
  */
 export default () => {
-  const { data } = camelCaseDeep(window.__INITIAL_APP_DATA__ || {});
-  const modelIdMapper = (entries, model) =>
-    entries.reduce((map, i) => {
-      map[`${i.id}`] = new model(i);
-      return map;
-    }, {});
-
+  const { data } = camelCaseDeep(window.__INITIAL_APP_DATA__ || { data: [] });
   return {
     data: {
-      byId: modelIdMapper(data, Data),
+      byId: mapById(data),
     },
   };
 };

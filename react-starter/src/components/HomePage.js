@@ -1,5 +1,4 @@
-import React from 'react';
-import styled from 'styled-components';
+import { React, styled } from 'utils/component';
 import ButtonList from 'components/ButtonList';
 import Nav from 'components/Nav';
 import Title from 'components/Title';

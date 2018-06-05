@@ -1,6 +1,6 @@
 import immer from 'immer';
 import { actionErr } from 'utils/storeHelpers';
-import * as exampleService from 'services/example';
+import * as exampleService from 'api/example';
 import DataModel from 'models/Data';
 
 const key = 'data';

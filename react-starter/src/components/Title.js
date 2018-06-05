@@ -1,5 +1,4 @@
-import React from 'react';
-import styled from 'styled-components';
+import { React, styled } from 'utils/component';
 
 const H1 = styled.h1`
   color: #80f;

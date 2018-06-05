@@ -1,6 +1,5 @@
-import React from 'react';
-import pt from 'prop-types';
 import { Link as ReactRouterLink } from 'react-router-dom';
+import { React, pt } from 'utils/component';
 
 const ExternalLink = ({ to, children }) => (
   <a href={to} rel="noopener">
