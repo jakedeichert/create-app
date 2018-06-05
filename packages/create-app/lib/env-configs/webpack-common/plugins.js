@@ -1,9 +1,14 @@
 const { EnvironmentPlugin } = require('webpack');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { getEnv } = require('../../utils/helpers');
 
 module.exports = config => {
-  config.plugins = [envVariables(), bundleAnalyzer()].filter(v => !!v);
+  config.plugins = [
+    envVariables(),
+    htmlTemplateFile(),
+    bundleAnalyzer(),
+  ].filter(v => !!v);
 };
 
 const envVariables = () =>
@@ -22,3 +27,9 @@ const envVariables = () =>
 // https://github.com/webpack-contrib/webpack-bundle-analyzer
 const bundleAnalyzer = () =>
   getEnv('build', 'info') && new BundleAnalyzerPlugin();
+
+// https://github.com/jantimon/html-webpack-plugin
+const htmlTemplateFile = () =>
+  new HtmlWebpackPlugin({
+    template: 'src/index.html',
+  });

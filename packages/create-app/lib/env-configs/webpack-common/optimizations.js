@@ -11,6 +11,6 @@ module.exports = config => {
     // Creates bundle/runtime~app.bundle.js (1.09 KiB)
     // runtimeChunk: true,
     // Creates bundle/runtime.bundle.js (1.08 KiB)
-    // runtimeChunk: 'single',
+    runtimeChunk: 'single',
   };
 };

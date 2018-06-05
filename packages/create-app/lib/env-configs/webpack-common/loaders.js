@@ -3,15 +3,15 @@ const path = require('path');
 module.exports = (config, thisModuleDir, projectType) => {
   config.module.rules = [
     getLanguageLoader(thisModuleDir, projectType),
-    {
-      // Now we can import html files. Example: import 'static/html/about/index.html'
-      test: /\.html$/,
-      loader: 'file-loader',
-      options: {
-        name: '[name].html',
-        context: './src/static/html/',
-      },
-    },
+    // {
+    //   // Now we can import html files. Example: import 'static/html/about/index.html'
+    //   test: /\.html$/,
+    //   loader: 'file-loader',
+    //   options: {
+    //     name: '[name].html',
+    //     context: './src/static/html/',
+    //   },
+    // },
     // Returns path to images required. If less than 8kb, inlines image as base64
     {
       test: /\.(png|jpg|gif)$/,
