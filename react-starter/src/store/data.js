@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { mapById, actionErr } from 'utils/storeHelpers';
+import { actionErr } from 'utils/storeHelpers';
 import * as userApi from 'api/user';
 
 const key = 'data';
