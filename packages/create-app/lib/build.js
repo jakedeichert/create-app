@@ -47,7 +47,7 @@ const runWebpack = async (workingDir, isDevMode, projectType) => {
   const configPath = getPath(
     `@jakedeichert/create-app/lib/env-configs/${projectType}/webpack.config.js`
   );
-  const webpackBinPath = getPath('webpack-cli/bin/webpack.js');
+  const webpackBinPath = getPath('webpack-cli/bin/cli.js');
   return spawnStream(`${env} ${webpackBinPath}`, [`--config ${configPath}`], {
     stdio: 'inherit',
     cwd: workingDir,
