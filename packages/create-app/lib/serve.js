@@ -17,7 +17,7 @@ exports.serve = async (workingDir, port = '8080') => {
 const runServe = async (workingDir, port) => {
   return spawnStream(
     `${getPath(`serve/bin/serve.js`)} dist`,
-    [`--port ${port} --single`],
+    [`--listen ${port} --single`],
     {
       stdio: 'inherit',
       cwd: workingDir,
