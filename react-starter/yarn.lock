@@ -92,16 +92,16 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@jakedeichert/create-app-cli@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@jakedeichert/create-app-cli/-/create-app-cli-1.2.0.tgz#7f51d54a53ba19da47d2b900282ab271a763b4aa"
+"@jakedeichert/create-app-cli@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@jakedeichert/create-app-cli/-/create-app-cli-1.2.1.tgz#e12314cf4ee792f655515cbac3e5f4a5d20bb50f"
   dependencies:
-    "@jakedeichert/create-app" "^2.3.0"
+    "@jakedeichert/create-app" "^2.3.1"
     yargs "^11.0.0"
 
-"@jakedeichert/create-app@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@jakedeichert/create-app/-/create-app-2.3.0.tgz#389b88feb017f3ad5ea528f9beb3464b736ceff6"
+"@jakedeichert/create-app@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@jakedeichert/create-app/-/create-app-2.3.1.tgz#aaae9ed1bb5a6343bdfa7fbc2c3e1e20e2837b66"
   dependencies:
     babel-core "^6.25.0"
     babel-eslint "^8.0.1"
