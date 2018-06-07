@@ -1,3 +1,5 @@
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
 // https://medium.com/webpack/webpack-4-mode-and-optimization-5423a6bc597a
 module.exports = config => {
   config.optimization = {
@@ -13,4 +15,17 @@ module.exports = config => {
     // Creates bundle/runtime.bundle.js (1.08 KiB)
     runtimeChunk: 'single',
   };
+
+  if (process.env.NODE_ENV === 'production') {
+    config.optimization.minimizer = [
+      new UglifyJsPlugin({
+        sourceMap: true,
+        uglifyOptions: {
+          output: {
+            comments: false,
+          },
+        },
+      }),
+    ];
+  }
 };
