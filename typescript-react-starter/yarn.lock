@@ -92,24 +92,25 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@jakedeichert/create-app-cli@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@jakedeichert/create-app-cli/-/create-app-cli-1.2.1.tgz#e12314cf4ee792f655515cbac3e5f4a5d20bb50f"
+"@jakedeichert/create-app-cli@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@jakedeichert/create-app-cli/-/create-app-cli-1.2.4.tgz#27413fc4bef1cbf8fca55e983faddd13634fed6c"
   dependencies:
-    "@jakedeichert/create-app" "^2.3.1"
+    "@jakedeichert/create-app" "^2.3.4"
     yargs "^11.0.0"
 
-"@jakedeichert/create-app@^2.3.1":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@jakedeichert/create-app/-/create-app-2.3.1.tgz#aaae9ed1bb5a6343bdfa7fbc2c3e1e20e2837b66"
+"@jakedeichert/create-app@^2.3.4":
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/@jakedeichert/create-app/-/create-app-2.3.4.tgz#945ca938b64a4f9e0b4c8d9eb7d86393105ba998"
   dependencies:
+    "@jakedeichert/eslint-config-create-app" "^1.0.1"
     babel-core "^6.25.0"
-    babel-eslint "^8.0.1"
     babel-jest "^23.0.1"
     babel-loader "^7.1.3"
     babel-plugin-syntax-dynamic-import "^6.18.0"
     babel-plugin-transform-class-properties "^6.24.1"
     babel-plugin-transform-object-rest-spread "^6.23.0"
+    babel-plugin-transform-react-remove-prop-types "^0.4.13"
     babel-preset-env "^1.6.0"
     babel-preset-react "^6.24.1"
     babel-register "^6.24.1"
@@ -117,9 +118,6 @@
     core-js "^2.4.1"
     electron "^2.0.2"
     electron-packager "^12.1.0"
-    eslint "^4.2.0"
-    eslint-plugin-jsx-a11y "^6.0.2"
-    eslint-plugin-react "^7.1.0"
     file-loader "^1.1.9"
     gray-matter "^4.0.1"
     html-webpack-plugin "^3.2.0"
@@ -141,6 +139,15 @@
     webpack-cli "^3.0.2"
     webpack-serve "^1.0.2"
     whatwg-fetch "^2.0.3"
+
+"@jakedeichert/eslint-config-create-app@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@jakedeichert/eslint-config-create-app/-/eslint-config-create-app-1.0.1.tgz#325a4e7bdcc943c7ce162754fc7a5a84f9f2e519"
+  dependencies:
+    babel-eslint "^8.0.1"
+    eslint "^4.2.0"
+    eslint-plugin-jsx-a11y "^6.0.2"
+    eslint-plugin-react "^7.1.0"
 
 "@shellscape/koa-send@^4.1.0":
   version "4.1.3"
@@ -1154,6 +1161,10 @@ babel-plugin-transform-react-jsx@^6.24.1:
     babel-helper-builder-react-jsx "^6.24.1"
     babel-plugin-syntax-jsx "^6.8.0"
     babel-runtime "^6.22.0"
+
+babel-plugin-transform-react-remove-prop-types@^0.4.13:
+  version "0.4.13"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-react-remove-prop-types/-/babel-plugin-transform-react-remove-prop-types-0.4.13.tgz#331cfc05099a808238311d78319c27460d481189"
 
 babel-plugin-transform-regenerator@^6.22.0:
   version "6.26.0"

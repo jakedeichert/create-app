@@ -31,23 +31,14 @@ const runLint = async (workingDir, projectType) => {
 };
 
 const runReactEslint = async (workingDir, isTest) => {
-  const configFile = isTest ? 'eslintrc.test.js' : 'eslintrc.js';
-  const configPath = path.join(
-    getPath('@jakedeichert/create-app/lib/env-configs/react'),
-    configFile
-  );
   const root = isTest ? './test' : '.';
   const ignores = !isTest
     ? `--ignore-pattern 'dist/' --ignore-pattern 'test/'`
     : '';
-  return spawnStream(
-    getPath('eslint/bin/eslint.js'),
-    [root, `--config ${configPath} ${ignores}`],
-    {
-      stdio: 'inherit',
-      cwd: workingDir,
-    }
-  ).catch(commandFail);
+  return spawnStream(getPath('eslint/bin/eslint.js'), [root, `${ignores}`], {
+    stdio: 'inherit',
+    cwd: workingDir,
+  }).catch(commandFail);
 };
 
 const runReactElectronEslint = async (workingDir, isTest) => {
