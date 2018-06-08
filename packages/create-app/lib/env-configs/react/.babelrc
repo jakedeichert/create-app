@@ -21,7 +21,16 @@
           }
         ]
       ],
-      "plugins": ["transform-react-remove-prop-types"]
+      "plugins": [
+        // https://github.com/oliviertassinari/babel-plugin-transform-react-remove-prop-types
+        "transform-react-remove-prop-types",
+        // https://babeljs.io/docs/plugins/transform-react-constant-elements/
+        "transform-react-constant-elements"
+        // This plugin seems to bloat the app bundle in react-starter
+        // Maybe this plugin benefits larger apps?
+        // https://babeljs.io/docs/plugins/transform-react-inline-elements/
+        // "transform-react-inline-elements"
+      ]
     }
   }
 }
