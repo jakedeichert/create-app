@@ -31,11 +31,11 @@ const getPrismLang = lang => {
 const parseLineNumberRange = language => {
   if (!language) return '';
   if (language.split('{').length > 1) {
-    let [splitLanguage, rangeStr] = language.split('{');
-    rangeStr = rangeStr.slice(0, -1);
+    const [splitLanguage, rangeStr] = language.split('{');
+    const range = rangeStr.slice(0, -1);
     return {
       splitLanguage,
-      highlightLines: rangeParser.parse(rangeStr).filter(n => n > 0),
+      highlightLines: rangeParser.parse(range).filter(n => n > 0),
     };
   }
 
