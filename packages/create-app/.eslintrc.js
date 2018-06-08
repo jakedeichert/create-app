@@ -7,7 +7,7 @@ module.exports = {
     node: true,
   },
 
-  extends: '@jakedeichert/create-app-eslint-config/base',
+  extends: '@jakedeichert/eslint-config-create-app/base.js',
 
   rules: {
     'no-console': OFF,

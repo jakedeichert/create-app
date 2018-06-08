@@ -1,3 +1,3 @@
 module.exports = {
-  extends: '@jakedeichert/create-app-eslint-config/test',
+  extends: '@jakedeichert/eslint-config-create-app/test',
 };

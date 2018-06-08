@@ -1,5 +1,5 @@
 {
-  "name": "@jakedeichert/create-app-eslint-config",
+  "name": "@jakedeichert/eslint-config-create-app",
   "version": "1.0.2",
   "description": "An eslint config for create-app",
   "main": "index.js",

@@ -1,5 +1,5 @@
 const OFF = 'off';
 
 module.exports = {
-  extends: '@jakedeichert/create-app-eslint-config/base',
+  extends: '@jakedeichert/eslint-config-create-app/base',
 };

@@ -10,7 +10,7 @@
     "format:check": "prettier --list-different '**/*.js'"
   },
   "dependencies": {
-    "@jakedeichert/create-app-eslint-config": "^1.0.2",
+    "@jakedeichert/eslint-config-create-app": "^1.0.2",
     "babel-core": "^6.25.0",
     "babel-jest": "^23.0.1",
     "babel-loader": "^7.1.3",

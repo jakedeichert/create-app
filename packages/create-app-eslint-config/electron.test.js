@@ -6,7 +6,7 @@ module.exports = {
   },
 
   extends: [
-    '@jakedeichert/create-app-eslint-config',
-    '@jakedeichert/create-app-eslint-config/react',
+    '@jakedeichert/eslint-config-create-app/base',
+    '@jakedeichert/eslint-config-create-app/react',
   ],
 };
