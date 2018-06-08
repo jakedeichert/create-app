@@ -1,7 +1,7 @@
 {
   "name": "@jakedeichert/react-starter",
   "description": "A React, Redux, Babel, Webpack, and Styled Components web app starter kit",
-  "version": "1.4.11",
+  "version": "1.4.12",
   "author": "Jake Deichert",
   "private": true,
   "license": "MIT",
@@ -29,6 +29,6 @@
     "styled-components": "^3.1.6"
   },
   "devDependencies": {
-    "@jakedeichert/create-app-cli": "^1.2.3"
+    "@jakedeichert/create-app-cli": "^1.2.4"
   }
 }
