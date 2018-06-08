@@ -1,0 +1,14 @@
+{
+  "name": "@jakedeichert/create-app-eslint-config",
+  "version": "1.0.0",
+  "description": "An eslint config for create-app",
+  "main": "index.js",
+  "author": "Jake Deichert",
+  "license": "MIT",
+  "dependencies": {
+    "babel-eslint": "^8.0.1",
+    "eslint": "^4.2.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.1.0"
+  }
+}

@@ -11,7 +11,7 @@ module.exports = {
   },
 
   extends: [
-    '../../../packages/eslint-config-create-app/index.js',
-    '../../../packages/eslint-config-create-app/react.js',
+    '@jakedeichert/create-app-eslint-config/base',
+    '@jakedeichert/create-app-eslint-config/react',
   ],
 };
