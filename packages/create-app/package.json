@@ -1,6 +1,6 @@
 {
   "name": "@jakedeichert/create-app",
-  "version": "2.3.6",
+  "version": "2.3.7",
   "description": "A cli build tool for react projects that abstracts away configuration",
   "author": "Jake Deichert",
   "license": "MIT",
