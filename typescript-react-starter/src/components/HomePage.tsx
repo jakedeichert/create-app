@@ -18,7 +18,7 @@ const Version = styled.p`
 
 const HomePage = () => (
   <Wrapper>
-    <Title>React Starter</Title>
+    <Title>TypeScript React Starter</Title>
     <Nav />
     <ButtonList />
     <Version>v{constants.version}</Version>

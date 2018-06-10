@@ -62,6 +62,8 @@ exports.getPath = path => {
   if (exports.doesFileExist(linkedLibModule)) return linkedLibModule;
   const linkedCliModule = `node_modules/@jakedeichert/create-app-cli/node_modules/${path}`;
   if (exports.doesFileExist(linkedCliModule)) return linkedCliModule;
+  const linkedEslintModule = `node_modules/@jakedeichert/create-app-cli/node_modules/@jakedeichert/create-app/node_modules/@jakedeichert/eslint-config-create-app/node_modules/${path}`;
+  if (exports.doesFileExist(linkedEslintModule)) return linkedEslintModule;
   const rootModule = `node_modules/${path}`;
   return rootModule;
 };

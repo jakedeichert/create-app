@@ -9,4 +9,5 @@ root_dir="$THIS_SCRIPTS_DIR/.."
 
 rm -rf $root_dir/node_modules
 rm -rf $root_dir/*/node_modules
-rm -rf $root_dir/*/*/node_modules
+rm -rf $root_dir/packages/*/node_modules
+rm -rf $root_dir/packages/*/yarn.lock

@@ -7,18 +7,10 @@ echo "==========================================================="
 THIS_SCRIPTS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 root_dir="$THIS_SCRIPTS_DIR/.."
 
-# Need to install each package since create-app depends on a specific
-# directory structure to find the node_module bin files. When using
-# lerna bootstrap only, it doesn't install all modules and submodules
-# since it just links them instead.
-
-# echo "Installing react-starter..."
-# cd $root_dir/react-starter
-# yarn
-
-# echo "Installing typescript-react-starter..."
-# cd $root_dir/typescript-react-starter
-# yarn
+# Need to install each project since some dependencies depend on certain
+# modules existing under node_modules. (eslint, webpack-hot-client)
+# cd $root_dir
+# ./scripts/install-projects.sh
 
 echo "Installing lerna..."
 cd $root_dir
@@ -27,4 +19,21 @@ yarn --no-lockfile
 echo "Linking with lerna bootstrap..."
 cd $root_dir
 lerna bootstrap
+
+# If multiple webpack modules exist under node_modules, webpack will compile multiple times
+# Also, eslint commands will not work with symlinking it seems
+echo "Preventing linking-related bugs..."
+cd $root_dir
+
+rm -rf react-starter/node_modules/webpack*
+rm -rf react-starter/node_modules/.bin/webpack*
+cp -R packages/create-app/node_modules/webpack-hot-client   react-starter/node_modules/webpack-hot-client
+cp -R packages/create-app/node_modules/loglevelnext         react-starter/node_modules/loglevelnext
+# ln -s $root_dir/packages/eslint-config/                    react-starter/node_modules/@jakedeichert/eslint-config-create-app
+
+rm -rf typescript-react-starter/node_modules/webpack*
+rm -rf typescript-react-starter/node_modules/.bin/webpack*
+cp -R packages/create-app/node_modules/webpack-hot-client   typescript-react-starter/node_modules/webpack-hot-client
+cp -R packages/create-app/node_modules/loglevelnext         typescript-react-starter/node_modules/loglevelnext
+# ln -s $root_dir/packages/eslint-config/                     typescript-react-starter/node_modules/@jakedeichert/eslint-config-create-app
 
