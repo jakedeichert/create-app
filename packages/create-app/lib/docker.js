@@ -1,5 +1,6 @@
 const { send } = require('./utils/event-logger');
-const { loadProjectConfig, spawnStream, getPath } = require('./utils/helpers');
+const { spawnStream, getPath } = require('./utils/helpers');
+const { loadProjectConfig } = require('./utils/configHelpers');
 
 const events = {
   lifeCycleBegin: 'docker.lifeCycle.begin',

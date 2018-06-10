@@ -1,6 +1,7 @@
 const path = require('path');
 const { send } = require('./utils/event-logger');
-const { loadProjectConfig, spawnStream, getPath } = require('./utils/helpers');
+const { spawnStream, getPath } = require('./utils/helpers');
+const { loadProjectConfig } = require('./utils/configHelpers');
 const events = {
   lifeCycleBegin: 'lint.lifeCycle.begin',
   lifeCycleEnd: 'lint.lifeCycle.end',

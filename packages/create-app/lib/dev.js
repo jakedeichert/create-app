@@ -1,10 +1,6 @@
 const { send } = require('./utils/event-logger');
-const {
-  loadProjectConfig,
-  spawnStream,
-  getPath,
-  setEnv,
-} = require('./utils/helpers');
+const { spawnStream, getPath, setEnv } = require('./utils/helpers');
+const { loadProjectConfig } = require('./utils/configHelpers');
 const events = {
   lifeCycleBegin: 'dev.lifeCycle.begin',
   lifeCycleEnd: 'dev.lifeCycle.end',

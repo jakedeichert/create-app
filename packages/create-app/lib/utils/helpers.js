@@ -12,11 +12,6 @@ exports.createDir = name => {
   });
 };
 
-exports.loadProjectConfig = workingDir => {
-  const configPath = path.join(workingDir, 'createapp.config.js');
-  return require(configPath);
-};
-
 exports.download = async (url, filepath) => {
   return new Promise((resolve, reject) => {
     request(url)

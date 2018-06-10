@@ -1,5 +1,6 @@
 const path = require('path');
-const { loadProjectConfig, getPath } = require('../../utils/helpers');
+const { getPath } = require('../../utils/helpers');
+const { loadProjectConfig } = require('../../utils/configHelpers');
 
 const workingDir = process.cwd();
 const thisModuleDir = path.join(
