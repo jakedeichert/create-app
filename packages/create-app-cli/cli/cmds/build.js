@@ -13,6 +13,10 @@ exports.builder = {
     alias: 'info',
     describe: 'Run with webpack bundle analyzer',
   },
+  k: {
+    alias: 'keep-proptypes',
+    describe: `Don't remove proptypes from the production build`,
+  },
 };
 
 const startEventListener = () => {
@@ -25,7 +29,7 @@ const startEventListener = () => {
 };
 
 exports.handler = async argv => {
-  const { dev, info } = argv;
+  const { dev, info, keepProptypes } = argv;
   startEventListener();
-  await build(currentDir, dev, info);
+  await build(currentDir, dev, info, keepProptypes);
 };

@@ -1,4 +1,5 @@
 const path = require('path');
+const { getEnv } = require('../../utils/helpers');
 
 module.exports = (config, thisModuleDir, projectType) => {
   config.module.rules = [
@@ -56,8 +57,12 @@ const getLanguageLoader = (thisModuleDir, projectType) => {
 
 const getBabelRcPath = projectType => {
   switch (projectType) {
-    case 'react':
+    case 'react': {
+      if (getEnv('build', 'keepProptypes')) {
+        return 'lib/env-configs/react/.keepProptypes.babelrc';
+      }
       return 'lib/env-configs/react/.babelrc';
+    }
     case 'react-electron':
       return 'lib/env-configs/react-electron/.babelrc';
   }
