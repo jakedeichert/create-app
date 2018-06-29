@@ -5,12 +5,12 @@ echo "INSTALLING STARTER PROJECTS"
 echo "==========================================================="
 
 THIS_SCRIPTS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-root_dir="$THIS_SCRIPTS_DIR/.."
+ROOT_DIR="$THIS_SCRIPTS_DIR/.."
 
 echo "Installing react-starter..."
-cd $root_dir/react-starter
+cd $ROOT_DIR/react-starter
 yarn
 
 echo "Installing typescript-react-starter..."
-cd $root_dir/typescript-react-starter
+cd $ROOT_DIR/typescript-react-starter
 yarn
