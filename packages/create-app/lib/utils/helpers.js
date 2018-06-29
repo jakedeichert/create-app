@@ -37,7 +37,6 @@ exports.spawnStream = (
     const child = spawn(cmd, args, { stdio, cwd, shell });
     child.on('error', reject);
     if (stdio === 'pipe') {
-      child.stdout.on('data', data => resolve(data.toString()));
       child.stderr.on('data', data => resolve(data.toString()));
     } else if (stdio === 'inherit') {
       child.on('close', exitCode => {
