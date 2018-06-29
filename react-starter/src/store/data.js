@@ -14,7 +14,7 @@ export const initialState = {
   },
 };
 
-export const reducer = (state, action, draft) => {
+export const reducer = (draft, action) => {
   switch (action.type) {
     case RECEIVE_DATA: {
       const { data } = action;

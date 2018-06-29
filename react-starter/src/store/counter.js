@@ -6,7 +6,7 @@ export const initialState = {
   value: 0,
 };
 
-export const reducer = (state, action, draft) => {
+export const reducer = (draft, action) => {
   switch (action.type) {
     case INCREMENT_COUNTER: {
       draft.value += 1;
