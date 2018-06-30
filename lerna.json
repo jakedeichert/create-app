@@ -3,6 +3,7 @@
   "packages": [
     "packages/*",
     "react-starter",
+    "typescript-lib-starter",
     "typescript-react-starter"
   ],
   "version": "independent",

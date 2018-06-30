@@ -34,3 +34,10 @@ echo "typescript-react-starter..."
 echo "--------------------------------------------------"
 cd $ROOT_DIR/typescript-react-starter
 yarn outdated
+
+echo "--------------------------------------------------"
+echo "typescript-lib-starter..."
+echo "--------------------------------------------------"
+cd $ROOT_DIR/typescript-lib-starter
+yarn outdated
+

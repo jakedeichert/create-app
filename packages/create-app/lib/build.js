@@ -18,9 +18,20 @@ exports.build = async (workingDir, isDevMode, infoAnalyzer, keepProptypes) => {
 
 const run = async (workingDir, isDevMode, projectType) => {
   switch (projectType) {
+    case 'js-lib':
+      await cleanDistDirectory(workingDir);
+      await cleanCacheDirectories(workingDir);
+      runMicrobundle(workingDir);
+      break;
+    case 'typescript-lib':
+      await cleanDistDirectory(workingDir);
+      await cleanCacheDirectories(workingDir);
+      await runMicrobundle(workingDir);
+      await fixTypeScriptDist(workingDir);
+      break;
     case 'typescript-react':
     case 'react':
-      await cleanDistDirectory();
+      await cleanDistDirectory(workingDir);
       await runWebpack(workingDir, isDevMode, projectType);
       break;
     case 'react-electron':
@@ -32,7 +43,31 @@ const run = async (workingDir, isDevMode, projectType) => {
 };
 
 const cleanDistDirectory = async workingDir => {
-  return spawnStream(`rm -rf dist/`, [], {
+  return spawnStream(`rm -rf dist`, [], {
+    stdio: 'inherit',
+    cwd: workingDir,
+  }).catch(commandFail);
+};
+
+const cleanCacheDirectories = async workingDir => {
+  return spawnStream(`rm -rf .rpt2_cache`, [], {
+    stdio: 'inherit',
+    cwd: workingDir,
+  }).catch(commandFail);
+};
+
+const fixTypeScriptDist = async workingDir => {
+  // Moves all d.ts files to the root and deletes the test directory
+  // that microbundle builds for some reason.
+  return spawnStream(`mv dist/src/* dist && rm -rf dist/src dist/test`, [], {
+    stdio: 'inherit',
+    cwd: workingDir,
+  }).catch(commandFail);
+};
+
+const runMicrobundle = async workingDir => {
+  const microbundleBinPath = getPath('microbundle/dist/cli.js');
+  return spawnStream(`${microbundleBinPath}`, [], {
     stdio: 'inherit',
     cwd: workingDir,
   }).catch(commandFail);

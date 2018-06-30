@@ -14,3 +14,7 @@ yarn
 echo "Installing typescript-react-starter..."
 cd $ROOT_DIR/typescript-react-starter
 yarn
+
+echo "Installing typescript-lib-starter..."
+cd $ROOT_DIR/typescript-lib-starter
+yarn

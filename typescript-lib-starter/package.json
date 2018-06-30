@@ -1,0 +1,22 @@
+{
+  "name": "@jakedeichert/typescript-lib-starter",
+  "version": "1.0.0",
+  "description": "A TypeScript library starter project",
+  "author": "Jake Deichert",
+  "private": true,
+  "license": "MIT",
+  "repository": "github:jakedeichert/create-app",
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "create-app lint",
+    "test": "create-app test",
+    "format": "create-app format",
+    "build": "create-app build",
+    "dev": "microbundle watch"
+  },
+  "devDependencies": {
+    "@jakedeichert/create-app-cli": "^1.2.8",
+    "@types/jest": "^23.0.1",
+    "@types/node": "^10.3.2"
+  }
+}
