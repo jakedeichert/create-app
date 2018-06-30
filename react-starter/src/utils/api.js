@@ -49,11 +49,7 @@ const handleNewlineDelimitedJsonResponse = async response => {
   const data = [];
   jsonLines.forEach(l => {
     if (!l.length) return;
-    try {
-      data.push(camelCaseDeep(JSON.parse(l)));
-    } catch (e) {
-      console.error('failed to parse newline delimited json', e);
-    }
+    data.push(camelCaseDeep(JSON.parse(l)));
   });
   return data;
 };
