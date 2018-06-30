@@ -17,6 +17,8 @@ exports.test = async (workingDir, clearCache) => {
 
 const run = async (workingDir, projectType, clearCache) => {
   switch (projectType) {
+    case 'js-lib':
+    case 'typescript-lib':
     case 'react':
     case 'react-electron':
     case 'typescript-react':

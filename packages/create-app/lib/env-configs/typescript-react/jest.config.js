@@ -7,7 +7,7 @@ module.exports = {
   modulePaths: ['<rootDir>/src'],
   transform: {
     '\\.tsx?$': `./${getPath(
-      '@jakedeichert/create-app/lib/env-configs/typescript-react/jest.transform.js'
+      '@jakedeichert/create-app/lib/env-configs/jest-common/jest.typescript.transform.js'
     )}`,
   },
   moduleNameMapper: {
