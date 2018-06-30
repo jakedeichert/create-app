@@ -12,7 +12,7 @@
     "test": "create-app test",
     "format": "create-app format",
     "build": "create-app build",
-    "dev": "microbundle watch"
+    "dev": "create-app dev"
   },
   "devDependencies": {
     "@jakedeichert/create-app-cli": "^1.2.8",
