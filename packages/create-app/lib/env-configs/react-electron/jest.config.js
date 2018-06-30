@@ -7,7 +7,7 @@ module.exports = {
   modulePaths: ['<rootDir>/src'],
   setupFiles: [
     `./${getPath(
-      '@jakedeichert/create-app/lib/env-configs/jest-common/jest.init.js'
+      '@jakedeichert/create-app/lib/env-configs/jest-common/init.js'
     )}`,
   ],
   transform: {
