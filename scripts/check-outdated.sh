@@ -18,6 +18,12 @@ cd $ROOT_DIR/packages/create-app-cli
 npm outdated
 
 echo "--------------------------------------------------"
+echo "eslint-config..."
+echo "--------------------------------------------------"
+cd $ROOT_DIR/packages/eslint-config
+npm outdated
+
+echo "--------------------------------------------------"
 echo "react-starter..."
 echo "--------------------------------------------------"
 cd $ROOT_DIR/react-starter
