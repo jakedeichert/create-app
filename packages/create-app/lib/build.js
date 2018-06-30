@@ -21,7 +21,7 @@ const run = async (workingDir, isDevMode, projectType) => {
     case 'js-lib':
       await cleanDistDirectory(workingDir);
       await cleanCacheDirectories(workingDir);
-      runMicrobundle(workingDir);
+      await runMicrobundle(workingDir);
       break;
     case 'typescript-lib':
       await cleanDistDirectory(workingDir);

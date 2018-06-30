@@ -17,6 +17,7 @@ const lint = async workingDir => {
 
 const runLint = async (workingDir, projectType) => {
   switch (projectType) {
+    case 'js-lib':
     case 'react':
       await runReactEslint(workingDir, false);
       await runReactEslint(workingDir, true);
@@ -25,6 +26,7 @@ const runLint = async (workingDir, projectType) => {
       await runReactElectronEslint(workingDir, false);
       await runReactElectronEslint(workingDir, true);
       break;
+    case 'typescript-lib':
     case 'typescript-react':
       await runEchoNoLintRules();
       break;

@@ -17,8 +17,15 @@ const dev = async workingDir => {
 
 const run = async (workingDir, projectType) => {
   switch (projectType) {
+    case 'js-lib':
+    case 'typescript-lib':
+      console.log(`\nNOTE: microbundle watch is currently broken right now\n`);
+      await cleanDistDirectory(workingDir);
+      await cleanCacheDirectories(workingDir);
+      await runMicrobundle(workingDir);
+      break;
     case 'react':
-      await cleanDistDirectory();
+      await cleanDistDirectory(workingDir);
       await runWebpack(workingDir, projectType);
       break;
     case 'react-electron':
@@ -27,7 +34,7 @@ const run = async (workingDir, projectType) => {
       runElectron(workingDir);
       break;
     case 'typescript-react':
-      await cleanDistDirectory();
+      await cleanDistDirectory(workingDir);
       await runWebpack(workingDir, projectType);
       break;
   }
@@ -35,7 +42,22 @@ const run = async (workingDir, projectType) => {
 
 // Clean it so that webpack-serve doesn't load older versions of things.
 const cleanDistDirectory = async workingDir => {
-  return spawnStream(`rm -rf dist/`, [], {
+  return spawnStream(`rm -rf dist`, [], {
+    stdio: 'inherit',
+    cwd: workingDir,
+  }).catch(commandFail);
+};
+
+const cleanCacheDirectories = async workingDir => {
+  return spawnStream(`rm -rf .rpt2_cache`, [], {
+    stdio: 'inherit',
+    cwd: workingDir,
+  }).catch(commandFail);
+};
+
+const runMicrobundle = async workingDir => {
+  const microbundleBinPath = getPath('microbundle/dist/cli.js');
+  return spawnStream(`${microbundleBinPath} watch`, [], {
     stdio: 'inherit',
     cwd: workingDir,
   }).catch(commandFail);
