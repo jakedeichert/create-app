@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 echo "==========================================================="
-echo "INSTALLING AND LINKING PACKAGES"
+echo "🔗 INSTALLING AND LINKING PACKAGES"
 echo "==========================================================="
 
 THIS_SCRIPTS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
