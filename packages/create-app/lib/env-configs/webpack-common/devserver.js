@@ -15,8 +15,15 @@ module.exports = (config, workingDir) => {
     host: '0.0.0.0',
     content: path.join(workingDir, 'dist'),
 
-    // https://github.com/webpack-contrib/webpack-serve#hot
-    hot: false,
+    // https://github.com/webpack-contrib/webpack-serve#optionshotclient
+    hotClient: {
+      // host: '0.0.0.0',
+      // hmr: true,
+      // reload: false,
+      // autoConfigure: true,
+      // logLevel: 'trace',
+      // allEntries: true,
+    },
 
     // Required so that reloading a react-router page will work correctly
     // instead of not being able to find that route.

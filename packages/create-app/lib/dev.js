@@ -68,8 +68,8 @@ const runWebpack = async (workingDir, projectType) => {
     `@jakedeichert/create-app/lib/env-configs/${projectType}/webpack.config.js`
   );
   return spawnStream(
-    getPath(`webpack-serve/cli.js`),
-    [`--config ${configPath}  --hot {}`],
+    getPath(`webpack-serve/lib/cli.js`),
+    [`--config ${configPath}`],
     {
       stdio: 'inherit',
       cwd: workingDir,

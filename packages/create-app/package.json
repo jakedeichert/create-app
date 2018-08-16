@@ -47,7 +47,7 @@
     "webpack": "^4.0.0",
     "webpack-bundle-analyzer": "^2.11.1",
     "webpack-cli": "^3.0.2",
-    "webpack-serve": "^1.0.2",
+    "webpack-serve": "^2.0.2",
     "whatwg-fetch": "^2.0.3"
   }
 }
