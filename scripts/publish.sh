@@ -14,4 +14,4 @@ if [[ "$NPM_CONFIG_OTP" == "" ]]; then
     exit 1
 fi
 
-lerna publish
+NPM_CONFIG_OTP="$NPM_CONFIG_OTP" lerna publish
