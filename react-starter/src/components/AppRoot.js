@@ -20,7 +20,7 @@ injectGlobal`
   }
 `;
 
-const basePath = process.env.BASE_URL || '';
+const basePath = process.env.BASE_PATH || '';
 
 const AppRoot = () => (
   <BrowserRouter basename={basePath}>

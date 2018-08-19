@@ -23,3 +23,10 @@ exports.loadProjectConfig = workingDir => {
   }
   return config;
 };
+
+exports.getBasePath = () => {
+  if (typeof process.env.BASE_PATH !== 'undefined') {
+    return process.env.BASE_PATH;
+  }
+  return '';
+};

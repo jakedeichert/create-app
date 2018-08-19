@@ -21,7 +21,7 @@ injectGlobal`
   }
 `;
 
-const basePath = process.env.BASE_URL || '';
+const basePath = process.env.BASE_PATH || '';
 
 const AppRoot: React.SFC<{}> = () => (
   <BrowserRouter basename={basePath}>
