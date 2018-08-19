@@ -166,6 +166,6 @@ export const put = async (route, body, options = {}) => {
 };
 
 export const del = async (route, options = {}) => {
-  const conf = getFullConfig(DELETE, { ...options });
+  const conf = getFullConfig(DELETE, options);
   return apiRequest(route, conf);
 };
