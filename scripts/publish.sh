@@ -9,9 +9,4 @@ ROOT_DIR="$THIS_SCRIPTS_DIR/.."
 
 cd $ROOT_DIR
 
-if [[ "$NPM_CONFIG_OTP" == "" ]]; then
-    echo "ERROR: NPM_CONFIG_OTP should be set"
-    exit 1
-fi
-
-NPM_CONFIG_OTP="$NPM_CONFIG_OTP" lerna publish
+lerna publish
