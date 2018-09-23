@@ -1,16 +1,14 @@
-import { apiEndpoint } from 'constants/app';
 import { pickValid } from 'utils/obj';
-import { createApi } from 'utils/api';
-
-const api = createApi(apiEndpoint);
+import { api, json } from './index';
 
 export const get = async id => {
-  const { results } = await api.get(`/user/${id}`);
+  const results = await json(api.get, `/user/${id}`);
   return results;
 };
 
 export const create = async userModel => {
-  const { results } = await api.post(
+  const results = await json(
+    api.post,
     `/user/${userModel.id}`,
     pickValid(userModel, 'name', 'email')
   );
@@ -18,7 +16,8 @@ export const create = async userModel => {
 };
 
 export const update = async userModel => {
-  const { results } = await api.put(
+  const results = await json(
+    api.put,
     `/user/${userModel.id}`,
     pickValid(userModel, 'id', 'name', 'email')
   );
@@ -26,6 +25,6 @@ export const update = async userModel => {
 };
 
 export const remove = async id => {
-  const { results } = await api.del(`/user/${id}`);
+  const results = await json(api.del, `/user/${id}`);
   return results;
 };
