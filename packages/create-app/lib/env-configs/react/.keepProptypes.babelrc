@@ -1,31 +1,28 @@
 {
-  "presets": ["react"],
+  "presets": ["@babel/preset-react"],
   "plugins": [
-    "transform-class-properties",
-    "transform-object-rest-spread",
-    "syntax-dynamic-import"
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-syntax-dynamic-import"
   ],
   "env": {
     "production": {
       "presets": [
         [
-          "env",
+          "@babel/preset-env",
           {
             "targets": {
               "browsers": ["> 1%", "not ie < 12"]
             },
             "modules": false
-            // Find out which polyfills would be required with debug:true
-            // "useBuiltIns": true,
-            // "debug": true
           }
         ]
       ],
       "plugins": [
         // https://github.com/oliviertassinari/babel-plugin-transform-react-remove-prop-types
-        // "transform-react-remove-prop-types",
+        // "babel-plugin-transform-react-remove-prop-types",
         // https://babeljs.io/docs/plugins/transform-react-constant-elements/
-        "transform-react-constant-elements"
+        "@babel/plugin-transform-react-constant-elements"
         // This plugin seems to bloat the app bundle in react-starter
         // Maybe this plugin benefits larger apps?
         // https://babeljs.io/docs/plugins/transform-react-inline-elements/
