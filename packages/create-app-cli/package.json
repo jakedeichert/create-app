@@ -14,6 +14,6 @@
   },
   "dependencies": {
     "@jakedeichert/create-app": "^2.5.3",
-    "yargs": "^11.0.0"
+    "yargs": "^12.0.2"
   }
 }
