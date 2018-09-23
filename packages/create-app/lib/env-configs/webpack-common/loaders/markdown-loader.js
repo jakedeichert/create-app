@@ -83,6 +83,17 @@ const applySyntaxHighlighting = ast => {
   });
 };
 
+// Apply rel="noopener noreferrer" to external links
+const adjustLinks = ast => {
+  visit(ast, 'link', node => {
+    // Assume internal link if it doesn't start with http
+    if (!node.url.startsWith('http')) return;
+    if (!node.data) node.data = {};
+    if (!node.data.hProperties) node.data.hProperties = {};
+    node.data.hProperties.rel = 'noopener noreferrer';
+  });
+};
+
 const collectImageNodes = ast => {
   const nodes = [];
   visit(ast, 'image', n => {
@@ -138,6 +149,7 @@ module.exports = function(source) {
   const loaderContent = this;
   const { ast, frontmatter } = getFrontmatterAndAstFromSource(source);
   applySyntaxHighlighting(ast);
+  adjustLinks(ast);
   // grayMatter also has an excerpt option, but it keeps all raw markdown.
   // Bold/styles/links would remain and I don't want that... I want plain text.
   const excerpt = getExcerpt(ast);
