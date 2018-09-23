@@ -7,9 +7,3 @@ declare module '*.json' {
   const value: any | {};
   export default value;
 }
-
-// Was used for css modules
-// declare module '*.css' {
-//   const value: any;
-//   export default value;
-// }
