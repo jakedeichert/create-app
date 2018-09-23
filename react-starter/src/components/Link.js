@@ -11,14 +11,15 @@ ExternalLink.propTypes = {
   to: pt.string,
 };
 
-const Link = ({ to, ext, children }) => {
-  if (ext) return <ExternalLink to={ext}>{children}</ExternalLink>;
+const Link = ({ to, children }) => {
+  if (to.startsWith('http')) {
+    return <ExternalLink to={to}>{children}</ExternalLink>;
+  }
   return <ReactRouterLink to={to}>{children}</ReactRouterLink>;
 };
 
 Link.propTypes = {
   to: pt.string,
-  ext: pt.string,
 };
 
 export default Link;
