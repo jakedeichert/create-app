@@ -4,14 +4,17 @@
 module.exports = require('babel-jest').createTransformer({
   presets: [
     [
-      'env',
+      '@babel/preset-env',
       {
         targets: 'electron',
         // A little different than the normal babelrc (don't disable "modules")
         // https://babeljs.io/docs/plugins/preset-env/#optionsmodules
       },
     ],
-    'react',
+    '@babel/preset-react',
   ],
-  plugins: ['transform-class-properties', 'transform-object-rest-spread'],
+  plugins: [
+    '@babel/plugin-proposal-class-properties',
+    '@babel/plugin-proposal-object-rest-spread',
+  ],
 });

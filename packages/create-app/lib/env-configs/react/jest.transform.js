@@ -3,15 +3,15 @@
 // from https://github.com/facebook/jest/issues/1468#issuecomment-276753756
 module.exports = require('babel-jest').createTransformer({
   presets: [
-    require('babel-preset-env').default({
+    require('@babel/preset-env').default({
       node: 'current',
       // A little different than the normal babelrc (don't disable "modules")
       // https://babeljs.io/docs/plugins/preset-env/#optionsmodules
     }),
-    require('babel-preset-react'),
+    require('@babel/preset-react'),
   ],
   plugins: [
-    require('babel-plugin-transform-class-properties'),
-    require('babel-plugin-transform-object-rest-spread'),
+    require('@babel/plugin-proposal-class-properties'),
+    require('@babel/plugin-proposal-object-rest-spread'),
   ],
 });
