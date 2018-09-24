@@ -2,7 +2,7 @@ import { Link as ReactRouterLink } from 'react-router-dom';
 import { React, pt } from 'utils/component';
 
 const ExternalLink = ({ to, children }) => (
-  <a href={to} rel="noopener">
+  <a href={to} rel="noopener noreferrer">
     {children}
   </a>
 );
