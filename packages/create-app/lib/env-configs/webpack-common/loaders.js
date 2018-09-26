@@ -1,9 +1,11 @@
 const path = require('path');
 const { getEnv } = require('../../utils/helpers');
+const mdxSyntaxHighlighting = require('./mdx-plugins/syntaxHighlighting');
 
 module.exports = (config, thisModuleDir, projectType) => {
+  const langLoader = getLanguageLoader(thisModuleDir, projectType);
   config.module.rules = [
-    getLanguageLoader(thisModuleDir, projectType),
+    langLoader,
     // {
     //   // Now we can import html files. Example: import 'static/html/about/index.html'
     //   test: /\.html$/,
@@ -28,8 +30,19 @@ module.exports = (config, thisModuleDir, projectType) => {
       ],
     },
     {
-      test: /\.md$/,
-      loader: path.resolve(__dirname, './loaders/markdown-loader'),
+      test: /\.mdx?$/,
+      use: [
+        {
+          loader: langLoader.loader,
+          options: langLoader.options,
+        },
+        {
+          loader: '@mdx-js/loader',
+          options: {
+            mdPlugins: [mdxSyntaxHighlighting],
+          },
+        },
+      ],
     },
   ];
 };
