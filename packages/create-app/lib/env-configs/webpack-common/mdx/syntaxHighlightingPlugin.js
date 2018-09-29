@@ -23,7 +23,7 @@ const parseLineNumberRange = language => {
   return { splitLanguage: language };
 };
 
-// from here https://github.com/gatsbyjs/gatsby/blob/e08b2778d5fa0b1d9e6cfcbab21fe00943452ead/packages/gatsby-remark-prismjs/src/index.js
+// Inspired by https://github.com/gatsbyjs/gatsby/blob/e08b2778d5fa0b1d9e6cfcbab21fe00943452ead/packages/gatsby-remark-prismjs/src/index.js
 module.exports = () => {
   const transformer = ast => {
     visit(ast, 'code', node => {
