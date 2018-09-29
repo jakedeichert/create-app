@@ -1,20 +1,12 @@
 const path = require('path');
 const { getEnv } = require('../../utils/helpers');
-const mdxSyntaxHighlighting = require('./mdx-plugins/syntaxHighlighting');
+const mdxSyntaxHighlighting = require('./mdx/syntaxHighlightingPlugin');
+const mdxImageLoader = require('./mdx/imageLoaderPlugin');
 
 module.exports = (config, thisModuleDir, projectType) => {
   const langLoader = getLanguageLoader(thisModuleDir, projectType);
   config.module.rules = [
     langLoader,
-    // {
-    //   // Now we can import html files. Example: import 'static/html/about/index.html'
-    //   test: /\.html$/,
-    //   loader: 'file-loader',
-    //   options: {
-    //     name: '[name].html',
-    //     context: './src/static/html/',
-    //   },
-    // },
     // Returns path to images required. If less than 8kb, inlines image as base64
     {
       test: /\.(png|jpg|gif)$/,
@@ -37,9 +29,9 @@ module.exports = (config, thisModuleDir, projectType) => {
           options: langLoader.options,
         },
         {
-          loader: '@mdx-js/loader',
+          loader: path.resolve(__dirname, './mdx/customLoader'),
           options: {
-            mdPlugins: [mdxSyntaxHighlighting],
+            mdPlugins: [mdxSyntaxHighlighting, mdxImageLoader],
           },
         },
       ],
