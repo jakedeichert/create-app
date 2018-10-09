@@ -64,11 +64,11 @@ const getBabelRcPath = projectType => {
   switch (projectType) {
     case 'react': {
       if (getEnv('build', 'keepProptypes')) {
-        return 'lib/env-configs/react/.keepProptypes.babelrc';
+        return 'lib/env-configs/react/.babelrc.keepProptypes.js';
       }
-      return 'lib/env-configs/react/.babelrc';
+      return 'lib/env-configs/react/.babelrc.js';
     }
     case 'react-electron':
-      return 'lib/env-configs/react-electron/.babelrc';
+      return 'lib/env-configs/react-electron/.babelrc.js';
   }
 };
