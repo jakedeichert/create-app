@@ -1,14 +1,5 @@
-const WebpackModule = require('module'); // inherited from webpack
 const visit = require('unist-util-visit');
-
-// https://github.com/webpack/webpack.js.org/issues/1268#issuecomment-313513988
-const webpackExecSource = (loaderContext, code, filename) => {
-  const mod = new WebpackModule(filename, loaderContext);
-  mod.paths = WebpackModule._nodeModulePaths(loaderContext.context);
-  mod.filename = filename;
-  mod._compile(code, filename);
-  return mod.exports;
-};
+const webpackHelpers = require('../utils/helpers');
 
 const collectImageNodes = ast => {
   const nodes = [];
@@ -31,7 +22,11 @@ const loadImageForNode = (loaderContext, node) => {
       if (err) return reject(err);
 
       // Exectute the js module to get the file path that file-loader created
-      const outputPath = webpackExecSource(loaderContext, source, imgPath);
+      const outputPath = webpackHelpers.execSource(
+        loaderContext,
+        source,
+        imgPath
+      );
       node.url = outputPath;
 
       resolve();

@@ -26,6 +26,3 @@ module.exports = () => {
 
   return plugin;
 };
-
-// Used in the rss generator
-module.exports.getExcerpt = getExcerpt;

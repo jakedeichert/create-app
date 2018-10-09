@@ -1,7 +1,7 @@
 const path = require('path');
 const { getEnv } = require('../../utils/helpers');
-const mdxSyntaxHighlighting = require('./mdx/syntaxHighlightingPlugin');
-const mdxImageLoader = require('./mdx/imageLoaderPlugin');
+const mdxSyntaxHighlightingPlugin = require('./mdx/syntaxHighlightingPlugin');
+const mdxImagePlugin = require('./mdx/imagePlugin');
 
 module.exports = (config, thisModuleDir, projectType) => {
   const langLoader = getLanguageLoader(thisModuleDir, projectType);
@@ -29,9 +29,9 @@ module.exports = (config, thisModuleDir, projectType) => {
           options: langLoader.options,
         },
         {
-          loader: path.resolve(__dirname, './mdx/customLoader'),
+          loader: path.resolve(__dirname, './mdx/loader'),
           options: {
-            mdPlugins: [mdxSyntaxHighlighting, mdxImageLoader],
+            mdPlugins: [mdxSyntaxHighlightingPlugin, mdxImagePlugin],
           },
         },
       ],
