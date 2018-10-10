@@ -16,20 +16,20 @@ module.exports = async function(content) {
   const excerpt = excerptPlugin();
   options.mdPlugins.push(excerpt.transformer);
 
-  let result;
+  let rawSource;
 
   try {
-    result = await mdx(content, options);
+    rawSource = await mdx(content, options);
   } catch (err) {
     return callback(err);
   }
 
-  const code = `
+  const finalSource = `
   import React from 'react'
   import { MDXTag } from '@mdx-js/tag'
-  ${result}
+  ${rawSource}
   export const excerpt = ${JSON.stringify(excerpt.value)};
   `;
 
-  return callback(null, code);
+  return callback(null, finalSource);
 };
