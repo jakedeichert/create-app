@@ -12,6 +12,12 @@ cd $ROOT_DIR/packages/create-app
 npm outdated
 
 echo "--------------------------------------------------"
+echo "create-app-plugin-electron..."
+echo "--------------------------------------------------"
+cd $ROOT_DIR/packages/create-app-plugin-electron
+npm outdated
+
+echo "--------------------------------------------------"
 echo "create-app-cli..."
 echo "--------------------------------------------------"
 cd $ROOT_DIR/packages/create-app-cli

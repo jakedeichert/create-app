@@ -11,6 +11,10 @@ echo "Installing create-app..."
 cd $ROOT_DIR/packages/create-app
 yarn --no-lockfile
 
+echo "Installing create-app-plugin-electron..."
+cd $ROOT_DIR/packages/create-app-plugin-electron
+yarn --no-lockfile
+
 echo "Installing create-app-cli..."
 cd $ROOT_DIR/packages/create-app-cli
 yarn --no-lockfile

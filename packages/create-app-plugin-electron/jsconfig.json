@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2016",
+    // Apparently this is not needed anymore/invalid?
+    // Module resolution so index.js scripts are properly found for intellisense.
+    // https://www.typescriptlang.org/docs/handbook/module-resolution.html
+    "moduleResolution": "node"
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
