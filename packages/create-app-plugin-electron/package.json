@@ -1,6 +1,6 @@
 {
   "name": "@jakedeichert/create-app-plugin-electron",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A plugin for create-app that adds electron support",
   "author": "Jake Deichert",
   "license": "MIT",
