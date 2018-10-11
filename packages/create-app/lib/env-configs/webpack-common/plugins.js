@@ -3,12 +3,14 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { getEnv } = require('../../utils/helpers');
 
-module.exports = config => {
-  config.plugins = [
-    envVariables(),
-    htmlTemplateFile(),
-    bundleAnalyzer(),
-  ].filter(v => !!v);
+module.exports = (config, isLibrary) => {
+  const plugins = [envVariables()];
+
+  if (!isLibrary) {
+    plugins.push(htmlTemplateFile(), bundleAnalyzer());
+  }
+
+  config.plugins = plugins.filter(v => !!v);
 };
 
 const envVariables = () =>

@@ -1,18 +1,12 @@
 const path = require('path');
 const { getEnv } = require('../../utils/helpers');
+const mdxSyntaxHighlightingPlugin = require('./mdx/syntaxHighlightingPlugin');
+const mdxImagePlugin = require('./mdx/imagePlugin');
 
 module.exports = (config, thisModuleDir, projectType) => {
+  const langLoader = getLanguageLoader(thisModuleDir, projectType);
   config.module.rules = [
-    getLanguageLoader(thisModuleDir, projectType),
-    // {
-    //   // Now we can import html files. Example: import 'static/html/about/index.html'
-    //   test: /\.html$/,
-    //   loader: 'file-loader',
-    //   options: {
-    //     name: '[name].html',
-    //     context: './src/static/html/',
-    //   },
-    // },
+    langLoader,
     // Returns path to images required. If less than 8kb, inlines image as base64
     {
       test: /\.(png|jpg|gif)$/,
@@ -28,8 +22,19 @@ module.exports = (config, thisModuleDir, projectType) => {
       ],
     },
     {
-      test: /\.md$/,
-      loader: path.resolve(__dirname, './loaders/markdown-loader'),
+      test: /\.mdx?$/,
+      use: [
+        {
+          loader: langLoader.loader,
+          options: langLoader.options,
+        },
+        {
+          loader: path.resolve(__dirname, './mdx/loader'),
+          options: {
+            mdPlugins: [mdxSyntaxHighlightingPlugin, mdxImagePlugin],
+          },
+        },
+      ],
     },
   ];
 };
@@ -59,11 +64,11 @@ const getBabelRcPath = projectType => {
   switch (projectType) {
     case 'react': {
       if (getEnv('build', 'keepProptypes')) {
-        return 'lib/env-configs/react/.keepProptypes.babelrc';
+        return 'lib/env-configs/react/.babelrc.keepProptypes.js';
       }
-      return 'lib/env-configs/react/.babelrc';
+      return 'lib/env-configs/react/.babelrc.js';
     }
     case 'react-electron':
-      return 'lib/env-configs/react-electron/.babelrc';
+      return 'lib/env-configs/react-electron/.babelrc.js';
   }
 };

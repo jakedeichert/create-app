@@ -5,6 +5,6 @@ const { getPath } = require('../../utils/helpers');
 // from https://github.com/facebook/jest/issues/1468#issuecomment-276753756
 module.exports = require('babel-jest').createTransformer({
   configFile: `./${getPath(
-    '@jakedeichert/create-app/lib/env-configs/react/.test.babelrc'
+    '@jakedeichert/create-app/lib/env-configs/react/.babelrc.test.js'
   )}`,
 });
