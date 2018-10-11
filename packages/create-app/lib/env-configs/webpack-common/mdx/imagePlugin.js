@@ -1,5 +1,4 @@
 const visit = require('unist-util-visit');
-const webpackHelpers = require('../utils/helpers');
 
 const collectImageNodes = ast => {
   const nodes = [];
@@ -21,12 +20,10 @@ const loadImageForNode = (loaderContext, node) => {
     loaderContext.loadModule(`${loader}${imgPath}`, function(err, source) {
       if (err) return reject(err);
 
-      // Exectute the js module to get the file path that file-loader created
-      const outputPath = webpackHelpers.execSource(
-        loaderContext,
-        source,
-        imgPath
-      );
+      // The source looks like this:
+      // module.exports = "/content-images/xxxxx.png"
+      // Here we extract just the path: /content-images/xxxxx.png
+      const outputPath = /".*"/.exec(source)[0].slice(1, -1);
       node.url = outputPath;
 
       resolve();
