@@ -14,7 +14,7 @@ npm outdated
 echo "--------------------------------------------------"
 echo "create-app-plugin-electron..."
 echo "--------------------------------------------------"
-cd $ROOT_DIR/packages/create-app-plugin-electron
+cd $ROOT_DIR/packages/plugin-electron
 npm outdated
 
 echo "--------------------------------------------------"

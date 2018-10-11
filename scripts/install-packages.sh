@@ -12,7 +12,7 @@ cd $ROOT_DIR/packages/create-app
 yarn --no-lockfile
 
 echo "Installing create-app-plugin-electron..."
-cd $ROOT_DIR/packages/create-app-plugin-electron
+cd $ROOT_DIR/packages/plugin-electron
 yarn --no-lockfile
 
 echo "Installing create-app-cli..."
