@@ -647,16 +647,16 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@jakedeichert/create-app-cli@^1.4.9":
-  version "1.4.9"
-  resolved "https://registry.yarnpkg.com/@jakedeichert/create-app-cli/-/create-app-cli-1.4.9.tgz#f415300c4a9b4bacbe8848177a464686e85b10f8"
+"@jakedeichert/create-app-cli@^1.4.10":
+  version "1.4.10"
+  resolved "https://registry.yarnpkg.com/@jakedeichert/create-app-cli/-/create-app-cli-1.4.10.tgz#4297ca2c1e3d70eba68621d5ebe25b59180d5d03"
   dependencies:
-    "@jakedeichert/create-app" "^2.7.0"
+    "@jakedeichert/create-app" "^2.7.1"
     yargs "^12.0.2"
 
-"@jakedeichert/create-app@^2.7.0":
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/@jakedeichert/create-app/-/create-app-2.7.0.tgz#1a2d4aad3ef7a41a74bc795d49a29ff3ba792eb6"
+"@jakedeichert/create-app@^2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@jakedeichert/create-app/-/create-app-2.7.1.tgz#fce252ba57e64598f783257ddccbb380b29b9cbd"
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/plugin-proposal-class-properties" "^7.0.0"
@@ -676,7 +676,6 @@
     babel-loader "^8.0.0"
     babel-plugin-transform-react-remove-prop-types "^0.4.13"
     connect-history-api-fallback "^1.5.0"
-    core-js "^2.4.1"
     file-loader "^2.0.0"
     html-webpack-plugin "^3.2.0"
     jest "^23.1.0"
@@ -2300,7 +2299,7 @@ core-js@^1.0.0:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
 
-core-js@^2.4.0, core-js@^2.4.1, core-js@^2.5.0, core-js@^2.5.7:
+core-js@^2.4.0, core-js@^2.5.0, core-js@^2.5.7:
   version "2.5.7"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.7.tgz#f972608ff0cead68b841a16a932d0b183791814e"
 
