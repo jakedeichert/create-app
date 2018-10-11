@@ -1,6 +1,6 @@
 {
   "name": "@jakedeichert/typescript-lib-starter",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "A TypeScript library starter project",
   "author": "Jake Deichert",
   "private": true,
@@ -15,7 +15,7 @@
     "dev": "create-app dev"
   },
   "devDependencies": {
-    "@jakedeichert/create-app-cli": "^1.4.9",
+    "@jakedeichert/create-app-cli": "^1.4.10",
     "@types/jest": "^23.0.1",
     "@types/node": "^10.3.2"
   }
