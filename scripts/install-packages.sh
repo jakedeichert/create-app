@@ -16,7 +16,7 @@ cd $ROOT_DIR/packages/plugin-electron
 yarn --no-lockfile
 
 echo "Installing create-app-cli..."
-cd $ROOT_DIR/packages/create-app-cli
+cd $ROOT_DIR/packages/cli
 yarn --no-lockfile
 
 echo "Installing eslint-config..."

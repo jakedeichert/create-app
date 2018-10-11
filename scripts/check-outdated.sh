@@ -20,7 +20,7 @@ npm outdated
 echo "--------------------------------------------------"
 echo "create-app-cli..."
 echo "--------------------------------------------------"
-cd $ROOT_DIR/packages/create-app-cli
+cd $ROOT_DIR/packages/cli
 npm outdated
 
 echo "--------------------------------------------------"
