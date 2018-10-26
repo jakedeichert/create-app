@@ -40,7 +40,7 @@ const run = async (workingDir, projectType) => {
   }
 };
 
-// Clean it so that webpack-serve doesn't load older versions of things.
+// Clean it so that webpack dev server doesn't load older versions of things.
 const cleanDistDirectory = async workingDir => {
   return spawnStream(`rm -rf dist`, [], {
     stdio: 'inherit',
@@ -68,7 +68,7 @@ const runWebpack = async (workingDir, projectType) => {
     `@jakedeichert/create-app/lib/env-configs/${projectType}/webpack.config.js`
   );
   return spawnStream(
-    getPath(`webpack-serve/lib/cli.js`),
+    getPath(`webpack-dev-server/bin/webpack-dev-server.js`),
     [`--config ${configPath}`],
     {
       stdio: 'inherit',
