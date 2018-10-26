@@ -17,20 +17,20 @@
     "serve": "create-app serve"
   },
   "dependencies": {
-    "immer": "^1.7.2",
-    "ky": "^0.3.0",
+    "immer": "^1.7.3",
+    "ky": "^0.4.1",
     "prop-types": "^15.6.2",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-redux": "^5.0.3",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-redux": "^5.1.0",
     "react-router-dom": "^4.3.1",
-    "redux": "^4.0.0",
+    "redux": "^4.0.1",
     "redux-thunk": "^2.1.0",
-    "reselect": "^3.0.1",
-    "styled-components": "^3.4.9"
+    "reselect": "^4.0.0",
+    "styled-components": "^4.0.2"
   },
   "devDependencies": {
     "@jakedeichert/create-app-cli": "^1.4.11",
-    "@types/jest": "^23.3.2"
+    "@types/jest": "^23.3.7"
   }
 }

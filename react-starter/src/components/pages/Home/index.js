@@ -1,7 +1,7 @@
 import { React, styled } from 'utils/component';
-import ButtonList from 'components/ButtonList';
-import Nav from 'components/Nav';
-import Title from 'components/Title';
+import ButtonList from './ButtonList';
+import Nav from 'components/common/Nav';
+import Title from 'components/common/Title';
 import * as constants from 'constants/app';
 
 const Wrapper = styled.div`

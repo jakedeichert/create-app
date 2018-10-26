@@ -1,5 +1,5 @@
 import { React, styled } from 'utils/component';
-import Link from 'components/Link';
+import Link from 'components/ui/Link';
 
 const Wrapper = styled.div`
   margin: 0 auto 50px;
