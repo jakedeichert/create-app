@@ -25,22 +25,11 @@ lerna bootstrap
 echo "Preventing linking-related bugs..."
 cd $ROOT_DIR
 
-
-
-rm -rf react-starter/node_modules/webpack*
-rm -rf react-starter/node_modules/.bin/webpack*
-cp -R packages/create-app/node_modules/webpack-hot-client   react-starter/node_modules/webpack-hot-client
-cp -R packages/create-app/node_modules/loglevelnext         react-starter/node_modules/loglevelnext
-# ln -s $ROOT_DIR/packages/eslint-config/                    react-starter/node_modules/@jakedeichert/eslint-config-create-app
 # Fix babel runtime reference
 mkdir react-starter/node_modules/@babel
 cp -R packages/create-app/node_modules/@babel/runtime       react-starter/node_modules/@babel/runtime
 
-
-
-rm -rf typescript-react-starter/node_modules/webpack*
-rm -rf typescript-react-starter/node_modules/.bin/webpack*
-cp -R packages/create-app/node_modules/webpack-hot-client   typescript-react-starter/node_modules/webpack-hot-client
-cp -R packages/create-app/node_modules/loglevelnext         typescript-react-starter/node_modules/loglevelnext
-# ln -s $ROOT_DIR/packages/eslint-config/                     typescript-react-starter/node_modules/@jakedeichert/eslint-config-create-app
+# Fix eslint config issues
+# ln -s $ROOT_DIR/packages/eslint-config/     react-starter/node_modules/@jakedeichert/eslint-config-create-app
+# ln -s $ROOT_DIR/packages/eslint-config/     typescript-react-starter/node_modules/@jakedeichert/eslint-config-create-app
 
