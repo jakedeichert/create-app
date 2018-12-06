@@ -22,7 +22,12 @@ module.exports = {
       ],
       plugins: [
         // https://github.com/oliviertassinari/babel-plugin-transform-react-remove-prop-types
-        'babel-plugin-transform-react-remove-prop-types',
+        [
+          'babel-plugin-transform-react-remove-prop-types',
+          {
+            removeImport: true,
+          },
+        ],
         // https://babeljs.io/docs/plugins/transform-react-constant-elements/
         '@babel/plugin-transform-react-constant-elements',
         // This plugin seems to bloat the app bundle in react-starter
