@@ -21,7 +21,7 @@ module.exports = config => {
       // https://github.com/terser-js/terser#minify-options
       new TerserPlugin({
         sourceMap: true,
-        uglifyOptions: {
+        terserOptions: {
           output: {
             comments: false,
           },
