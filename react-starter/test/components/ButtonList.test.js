@@ -1,4 +1,4 @@
-import ButtonList from 'components/ButtonList';
+import ButtonList from 'components/pages/Home/ButtonList';
 
 describe('Example tests...', () => {
   test('ButtonList component should have display name "Connect(ButtonList)"', () => {
