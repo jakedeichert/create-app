@@ -9,4 +9,4 @@ ROOT_DIR="$THIS_SCRIPTS_DIR/.."
 
 cd $ROOT_DIR
 
-lerna publish
+./node_modules/.bin/lerna publish

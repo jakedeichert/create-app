@@ -5,14 +5,8 @@ module.exports = {
   plugins: [
     'jsx-a11y', // https://github.com/evcohen/eslint-plugin-jsx-a11y
     'react', // https://github.com/yannickcr/eslint-plugin-react
+    'react-hooks', // https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks
   ],
-
-  settings: {
-    react: {
-      pragma: 'React',
-      version: '15.0',
-    },
-  },
 
   extends: 'plugin:react/recommended',
 
@@ -110,5 +104,10 @@ module.exports = {
     'jsx-a11y/scope': WARN,
     // Enforce tabIndex value is not greater than zero
     'jsx-a11y/tabindex-no-positive': WARN,
+
+    // **********************************************************
+    // Enable react-hooks rules
+    // **********************************************************
+    'react-hooks/rules-of-hooks': ERROR,
   },
 };

@@ -18,7 +18,7 @@ yarn --no-lockfile
 
 echo "Linking with lerna bootstrap..."
 cd $ROOT_DIR
-lerna bootstrap
+./node_modules/.bin/lerna bootstrap
 
 # If multiple webpack modules exist under node_modules, webpack will compile multiple times
 # Also, eslint commands will not work with symlinking it seems
