@@ -1,4 +1,4 @@
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 // https://medium.com/webpack/webpack-4-mode-and-optimization-5423a6bc597a
 module.exports = config => {
@@ -18,7 +18,8 @@ module.exports = config => {
 
   if (process.env.NODE_ENV === 'production') {
     config.optimization.minimizer = [
-      new UglifyJsPlugin({
+      // https://github.com/terser-js/terser#minify-options
+      new TerserPlugin({
         sourceMap: true,
         uglifyOptions: {
           output: {
