@@ -20,16 +20,17 @@ echo "Linking with lerna bootstrap..."
 cd $ROOT_DIR
 ./node_modules/.bin/lerna bootstrap
 
-# If multiple webpack modules exist under node_modules, webpack will compile multiple times
-# Also, eslint commands will not work with symlinking it seems
-echo "Preventing linking-related bugs..."
-cd $ROOT_DIR
+
+
+# echo "Preventing linking-related bugs..."
+# cd $ROOT_DIR
 
 # Fix babel runtime reference
-mkdir react-starter/node_modules/@babel
-cp -R packages/create-app/node_modules/@babel/runtime       react-starter/node_modules/@babel/runtime
+# mkdir react-starter/node_modules/@babel
+# cp -R packages/create-app/node_modules/@babel/runtime       react-starter/node_modules/@babel/runtime
 
 # Fix eslint config issues
+# Eslint commands will not work with symlinking it seems
 # ln -s $ROOT_DIR/packages/eslint-config/     react-starter/node_modules/@jakedeichert/eslint-config-create-app
 # ln -s $ROOT_DIR/packages/eslint-config/     typescript-react-starter/node_modules/@jakedeichert/eslint-config-create-app
 
