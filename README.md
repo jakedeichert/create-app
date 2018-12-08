@@ -31,7 +31,7 @@ create-app dev
 # Build for production
 create-app build
 # Or include a base path when serving under a specific directory
-BASE_PATH=react-starter create-app build
+BASE_PATH=/react-starter create-app build
 
 # Serve the dist directory on localhost:8080
 create-app serve

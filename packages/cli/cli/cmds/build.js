@@ -7,7 +7,7 @@ exports.describe = 'bundle for production';
 exports.builder = {
   d: {
     alias: 'dev',
-    describe: 'Build in dev mode, not for production',
+    describe: 'Build in dev/debug mode, not for production',
   },
   i: {
     alias: 'info',
