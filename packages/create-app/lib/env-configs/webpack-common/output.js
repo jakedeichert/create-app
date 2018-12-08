@@ -13,6 +13,11 @@ module.exports = (config, workingDir, isLibrary) => {
   }
 
   config.output.publicPath = getBasePath();
-  config.output.filename = 'bundle/[name].[hash:8].bundle.js';
-  config.output.chunkFilename = 'bundle/[name].[chunkhash:8].bundle.js';
+  config.output.filename = 'bundle/[name].bundle.js';
+  config.output.chunkFilename = 'bundle/[name].chunk.js';
+
+  if (process.env.NODE_ENV === 'production') {
+    config.output.filename = 'bundle/[name].[contenthash:8].bundle.js';
+    config.output.chunkFilename = 'bundle/[name].[contenthash:8].chunk.js';
+  }
 };

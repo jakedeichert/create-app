@@ -9,6 +9,6 @@ module.exports = (config, workingDir, projectType, isLibrary) => {
   }
 
   config.entry = {
-    app: [path.join(workingDir, `src/index.${mainExt}`)],
+    main: [path.join(workingDir, `src/index.${mainExt}`)],
   };
 };

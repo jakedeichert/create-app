@@ -1,4 +1,4 @@
-const { EnvironmentPlugin } = require('webpack');
+const { EnvironmentPlugin, HashedModuleIdsPlugin } = require('webpack');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { getEnv } = require('../../utils/helpers');
@@ -8,6 +8,11 @@ module.exports = (config, isLibrary) => {
 
   if (!isLibrary) {
     plugins.push(htmlTemplateFile(), bundleAnalyzer());
+
+    if (process.env.NODE_ENV === 'production') {
+      // Guarantee same hashes on rebuilds
+      plugins.push(new HashedModuleIdsPlugin());
+    }
   }
 
   config.plugins = plugins.filter(v => !!v);

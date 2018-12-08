@@ -6,19 +6,19 @@ const TerserPlugin = require('terser-webpack-plugin');
 // https://hackernoon.com/the-100-correct-way-to-split-your-chunks-with-webpack-f8a9df5b7758
 module.exports = config => {
   config.optimization = {
-    // Don't need this since I only have 1 entry point bundle (app.js).
+    // Don't need this since I only have 1 entry point bundle (main.js).
     // The default behaviour is actually really good as described on the plugin page for this.
-    // The entrypoint (app.js) is combined with all neccessary vendor dependencies. However,
+    // The entrypoint (main.js) is combined with all neccessary vendor dependencies. However,
     // if one or more dynamic (page) bundles use a heavy dependency, then it will be broken out
     // into a separate shared vendor bundle.
     // splitChunks: {
     //   chunks: 'all', // https://webpack.js.org/guides/code-splitting/#prevent-duplication
     // },
     // https://webpack.js.org/configuration/optimization/#optimization-runtimechunk
-    // Creates bundle/runtime~app.bundle.js (1.09 KiB)
+    // Creates bundle/runtime~main.bundle.js (1.09 KiB)
     // runtimeChunk: true,
     // Creates bundle/runtime.bundle.js (1.08 KiB)
-    // Don't need this since I only have 1 entry point bundle (app.js).
+    // Don't need this since I only have 1 entry point bundle (main.js).
     // runtimeChunk: 'single',
   };
 
