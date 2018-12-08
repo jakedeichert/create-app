@@ -1,6 +1,6 @@
 {
   "name": "@jakedeichert/create-app-plugin-electron",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A plugin for create-app that adds electron support",
   "author": "Jake Deichert",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "format:check": "prettier --list-different '**/*.js'"
   },
   "dependencies": {
-    "@jakedeichert/eslint-config-create-app": "^1.0.3",
+    "@jakedeichert/eslint-config-create-app": "^1.0.4",
     "electron": "^3.0.0",
     "electron-packager": "^12.1.0",
     "prettier": "^1.7.4"
