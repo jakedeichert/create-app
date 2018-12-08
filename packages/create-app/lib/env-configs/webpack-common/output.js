@@ -1,7 +1,7 @@
 const path = require('path');
-const { getBasePath } = require('../../utils/configHelpers');
 
-module.exports = (config, workingDir, isLibrary) => {
+module.exports = (config, projectConfig, workingDir, isLibrary) => {
+  const { publicPath, bundleFilename, chunkFilename } = projectConfig;
   config.output = {
     path: path.join(workingDir, 'dist/'),
   };
@@ -12,12 +12,14 @@ module.exports = (config, workingDir, isLibrary) => {
     return;
   }
 
-  config.output.publicPath = getBasePath();
-  config.output.filename = 'bundle/[name].bundle.js';
-  config.output.chunkFilename = 'bundle/[name].chunk.js';
+  config.output.publicPath = publicPath;
+  config.output.filename = bundleFilename || 'bundle/[name].bundle.js';
+  config.output.chunkFilename = chunkFilename || 'bundle/[name].chunk.js';
 
   if (process.env.NODE_ENV === 'production') {
-    config.output.filename = 'bundle/[name].[contenthash:8].bundle.js';
-    config.output.chunkFilename = 'bundle/[name].[contenthash:8].chunk.js';
+    config.output.filename =
+      bundleFilename || 'bundle/[name].[contenthash:8].bundle.js';
+    config.output.chunkFilename =
+      chunkFilename || 'bundle/[name].[contenthash:8].chunk.js';
   }
 };

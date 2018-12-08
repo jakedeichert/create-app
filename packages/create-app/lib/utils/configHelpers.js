@@ -22,7 +22,9 @@ const getPublicPath = () => {
 exports.loadProjectConfig = workingDir => {
   let config = {
     type: getProjectType(workingDir),
-    publicPath: getPublicPath(),
+    publicPath: getPublicPath(), // Defaults to env var PUBLIC_PATH
+    bundleFilename: null,
+    chunkFilename: null,
     envVars: {},
   };
   const configPath = path.join(workingDir, 'createapp.config.js');

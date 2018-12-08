@@ -22,7 +22,7 @@ require('../webpack-common/entry')(
   projectConfig.type
 );
 require('../webpack-common/watch')(webBundleConfig);
-require('../webpack-common/output')(webBundleConfig, workingDir);
+require('../webpack-common/output')(webBundleConfig, projectConfig, workingDir);
 require('../webpack-common/resolve')(webBundleConfig, workingDir);
 require('../webpack-common/optimizations')(webBundleConfig);
 require('../webpack-common/loaders')(
@@ -53,7 +53,12 @@ if (process.env.NODE_ENV === 'production') {
       projectConfig.type,
       true
     );
-    require('../webpack-common/output')(nodeLibConfig, workingDir, true);
+    require('../webpack-common/output')(
+      nodeLibConfig,
+      projectConfig,
+      workingDir,
+      true
+    );
     require('../webpack-common/resolve')(nodeLibConfig, workingDir);
     require('../webpack-common/loaders')(
       nodeLibConfig,
