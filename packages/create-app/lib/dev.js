@@ -10,8 +10,8 @@ const events = {
 const dev = async workingDir => {
   setEnv('dev', 'server_mode', true);
   send(events.lifeCycleBegin);
-  const config = loadProjectConfig(workingDir);
-  await run(workingDir, config.type);
+  const projectConfig = loadProjectConfig(workingDir);
+  await run(workingDir, projectConfig.type);
   send(events.lifeCycleEnd);
 };
 

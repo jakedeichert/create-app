@@ -11,8 +11,8 @@ exports.build = async (workingDir, isDevMode, infoAnalyzer, keepProptypes) => {
   setEnv('build', 'info', !!infoAnalyzer);
   setEnv('build', 'keepProptypes', !!keepProptypes);
   send(exports.events.lifeCycleBegin);
-  const config = loadProjectConfig(workingDir);
-  await run(workingDir, isDevMode, config.type);
+  const projectConfig = loadProjectConfig(workingDir);
+  await run(workingDir, isDevMode, projectConfig.type);
   send(exports.events.lifeCycleEnd);
 };
 

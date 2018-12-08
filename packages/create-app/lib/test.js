@@ -10,8 +10,8 @@ exports.events = {
 
 exports.test = async (workingDir, clearCache) => {
   send(exports.events.lifeCycleBegin);
-  const config = loadProjectConfig(workingDir);
-  await run(workingDir, config.type, clearCache);
+  const projectConfig = loadProjectConfig(workingDir);
+  await run(workingDir, projectConfig.type, clearCache);
   send(exports.events.lifeCycleEnd);
 };
 

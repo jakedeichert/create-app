@@ -10,8 +10,8 @@ const events = {
 
 const lint = async workingDir => {
   send(events.lifeCycleBegin);
-  const config = loadProjectConfig(workingDir);
-  await runLint(workingDir, config.type);
+  const projectConfig = loadProjectConfig(workingDir);
+  await runLint(workingDir, projectConfig.type);
   send(events.lifeCycleEnd);
 };
 

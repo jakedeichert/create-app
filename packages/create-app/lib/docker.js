@@ -13,10 +13,10 @@ exports.events = events;
 
 exports.start = async (workingDir, port = '8080') => {
   send(events.lifeCycleBegin);
-  const config = loadProjectConfig(workingDir);
-  await runInit(workingDir, config.type).catch(initCommandFail);
+  const projectConfig = loadProjectConfig(workingDir);
+  await runInit(workingDir, projectConfig.type).catch(initCommandFail);
   send(events.startContainer);
-  await runStart(workingDir, config.type, port).catch(startCommandFail);
+  await runStart(workingDir, projectConfig.type, port).catch(startCommandFail);
   send(events.lifeCycleEnd);
 };
 
