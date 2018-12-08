@@ -3,8 +3,8 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { getEnv } = require('../../utils/helpers');
 
-module.exports = (config, isLibrary) => {
-  const plugins = [envVariables()];
+module.exports = (config, projectConfig, isLibrary) => {
+  const plugins = [envVariables(projectConfig.envVars)];
 
   if (!isLibrary) {
     plugins.push(htmlTemplateFile(), bundleAnalyzer());
@@ -18,15 +18,11 @@ module.exports = (config, isLibrary) => {
   config.plugins = plugins.filter(v => !!v);
 };
 
-const envVariables = () =>
+// https://webpack.js.org/plugins/environment-plugin/
+const envVariables = configEnvVars =>
   new EnvironmentPlugin({
-    // Used with react-router when serving under a specific directory
-    // Example: this example below allows react-router to work with gh-pages since
-    // repo sites are prefixed with their name...
-    BASE_PATH: '',
-
-    // Useful to specify a type of build. Example: static
-    BUILD_TYPE: false,
+    // NOTE: if you don't specify variables here, they will be undefined in the built package.
+    ...configEnvVars,
   });
 
 // https://github.com/webpack-contrib/webpack-bundle-analyzer

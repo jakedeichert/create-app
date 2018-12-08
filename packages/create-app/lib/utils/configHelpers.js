@@ -12,9 +12,18 @@ const getProjectType = workingDir => {
   return isTypeScript ? 'typescript-lib' : 'js-lib';
 };
 
+const getPublicPath = () => {
+  if (typeof process.env.PUBLIC_PATH !== 'undefined') {
+    return process.env.PUBLIC_PATH;
+  }
+  return '/';
+};
+
 exports.loadProjectConfig = workingDir => {
   let config = {
     type: getProjectType(workingDir),
+    publicPath: getPublicPath(),
+    envVars: {},
   };
   const configPath = path.join(workingDir, 'createapp.config.js');
   // Allow config file to override default
@@ -22,11 +31,4 @@ exports.loadProjectConfig = workingDir => {
     config = Object.assign(config, require(configPath));
   }
   return config;
-};
-
-exports.getBasePath = () => {
-  if (typeof process.env.BASE_PATH !== 'undefined') {
-    return process.env.BASE_PATH;
-  }
-  return '/';
 };
