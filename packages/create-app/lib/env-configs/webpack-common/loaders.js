@@ -9,7 +9,7 @@ module.exports = (config, thisModuleDir, projectType) => {
     langLoader,
     // Returns path to images required. If less than 8kb, inlines image as base64
     {
-      test: /\.(png|jpg|gif)$/,
+      test: /\.(png|jpg|gif|svg)$/,
       use: [
         {
           loader: 'url-loader',
