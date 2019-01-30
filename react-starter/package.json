@@ -13,7 +13,6 @@
     "build": "create-app build",
     "build:ghpages": "BASE_PATH=react-starter create-app build",
     "deploy": "./scripts/deploy_ghpages.sh",
-    "docker": "create-app docker start",
     "serve": "create-app serve"
   },
   "dependencies": {
