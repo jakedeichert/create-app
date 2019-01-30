@@ -41,14 +41,3 @@ yarn run serve
 # Format your code with prettier
 yarn run format
 ~~~
-
-#### Serving with Docker
-
-You can also run a Docker container to build and serve your project.
-
-To do so, simply run:
-
-~~~sh
-yarn run docker
-# Then open http://localhost:8080 in your browser
-~~~

@@ -37,11 +37,6 @@ BASE_PATH=/react-starter create-app build
 create-app serve
 # Or a different port
 create-app serve --port 4000
-
-# Build for production and serve through a docker container on localhost:8080
-create-app docker start
-# Or a different port
-create-app docker start --port 4000
 ~~~
 
 
@@ -83,13 +78,6 @@ Starter project: [typescript-react-starter][4]
 * [jest](https://github.com/facebook/jest)
 * [prettier](https://github.com/prettier/prettier)
 
-
-### Other Environments
-
-Support for my other environment setups will be coming soon.
-
-* TypeScript React Electron
-* React Electron
 
 
 
