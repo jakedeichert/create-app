@@ -10,6 +10,12 @@ module.exports = {
 
   extends: 'plugin:react/recommended',
 
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+
   rules: {
     // **********************************************************
     // Override react recommended defaults
@@ -26,14 +32,8 @@ module.exports = {
     'react/forbid-component-props': WARN,
     // Prevent prop type "any"
     'react/forbid-prop-types': [WARN, { forbid: ['any'] }],
-    // Prevent multiple component definitions per file
-    'react/no-multi-comp': [WARN, { ignoreStateless: true }],
-    // Prevent usage of the return value of React.render
-    'react/no-render-return-value': WARN,
     // Prevent definitions of unused prop types
     'react/no-unused-prop-types': WARN,
-    // Enforce ES6 class for React Components
-    'react/prefer-es6-class': ERROR,
     // Enforce stateless React Components to be written as a pure function
     'react/prefer-stateless-function': WARN,
     // Prevent extra closing tags for components without children
@@ -109,5 +109,6 @@ module.exports = {
     // Enable react-hooks rules
     // **********************************************************
     'react-hooks/rules-of-hooks': ERROR,
+    'react-hooks/exhaustive-deps': WARN,
   },
 };
